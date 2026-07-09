@@ -1243,19 +1243,25 @@
                 后于四川雅安宝兴县设立第二工作室，扎根汉白玉之乡，复兴穆坪砚制作技艺，
                 探索石雕与砚台的艺术边界。
             </p>
+            <p style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; line-height: 1.8; margin-top: 1rem;">
+                Zhao Yanqing, a national-level industrial art designer and Sichuan Provincial Master Craftsman, 
+                founded Chongqing Yanqing Sculpture Art Co., Ltd. in 2016, specializing in urban landscape sculpture. 
+                A second studio was later established in Baoxing, Yaan, reviving the Muping Inkstone tradition 
+                and exploring the boundaries of stone carving art.
+            </p>
             <div class="section-divider"></div>
             <div class="about-stats">
                 <div>
                     <div class="about-stat-num">30+</div>
-                    <div class="about-stat-label">城市雕塑项目</div>
+                    <div class="about-stat-label">城市雕塑项目<br><span style="font-family: var(--serif-en); font-size: 0.6rem; color: var(--gray);">Urban Projects</span></div>
                 </div>
                 <div>
                     <div class="about-stat-num">9</div>
-                    <div class="about-stat-label">国家级省级金奖</div>
+                    <div class="about-stat-label">国家级省级金奖<br><span style="font-family: var(--serif-en); font-size: 0.6rem; color: var(--gray);">National Awards</span></div>
                 </div>
                 <div>
                     <div class="about-stat-num">MMXVI</div>
-                    <div class="about-stat-label">品牌创立年份</div>
+                    <div class="about-stat-label">品牌创立年份<br><span style="font-family: var(--serif-en); font-size: 0.6rem; color: var(--gray);">Established</span></div>
                 </div>
             </div>
         </div>
@@ -1266,27 +1272,56 @@
 <section class="section" id="portfolio">
     <div class="section-tag">N°02 — Les OEuvres</div>
     <h2 class="section-title">作品集</h2>
-    <p class="section-desc">
-        从城市公共艺术到案头文房雅器，跨越材料的雕塑实践。
+    <p class="section-desc" style="max-width: 700px;">
+        从城市公共艺术到案头文房雅器，跨越材料的雕塑实践。<br>
+        <span style="font-family: var(--serif-en); font-style: italic; color: var(--gray);">
+        From urban public art to desk scholar's treasures — a sculptural practice across materials.
+        </span><br>
         石雕、铸铜、砚台、陶瓷——每一种材料都是与大地的对话。
     </p>
 
     <div class="portfolio-filters">
         <button class="portfolio-filter active" onclick="filterPortfolio('all', this)">全部作品</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('urban', this)">城市雕塑</button>
         <button class="portfolio-filter" onclick="filterPortfolio('sculpture', this)">石雕创作</button>
         <button class="portfolio-filter" onclick="filterPortfolio('inkstone', this)">制砚作品</button>
-        <button class="portfolio-filter" onclick="filterPortfolio('urban', this)">城市雕塑</button>
         <button class="portfolio-filter" onclick="filterPortfolio('ceramic', this)">陶瓷艺术</button>
     </div>
 
     <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Urban Sculpture Projects -->
+        <div class="portfolio-item" data-category="urban" onclick="openLightbox('川藏零公里·自驾大本营', '2023', '雅安金鸡关', 'N°UR-2023-001', 'images/chuanzang-linggongli.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/chuanzang-linggongli.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°UR-2023-001</div>
+                <div class="portfolio-overlay-title">川藏零公里·自驾大本营</div>
+                <div class="portfolio-overlay-meta">Chuanzang Ling Gongli · Yaan Jinjiguan</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="urban" onclick="openLightbox('火车拉来的城市', '2017', '六盘水三线文化创意小镇', 'N°UR-2017-001', 'images/sanxian-wamei.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/sanxian-wamei.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°UR-2017-001</div>
+                <div class="portfolio-overlay-title">火车拉来的城市</div>
+                <div class="portfolio-overlay-meta">The City Brought by Trains · Liupanshui</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="urban" onclick="openLightbox('龙行十八式', '2022', '四川茶文化公园', 'N°UR-2022-001', 'images/mengdingshan-beilin.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/mengdingshan-beilin.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°UR-2022-001</div>
+                <div class="portfolio-overlay-title">龙行十八式</div>
+                <div class="portfolio-overlay-meta">18 Forms of Dragon Tea · Mengdingshan</div>
+            </div>
+        </div>
+
         <!-- Sculptures -->
         <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('观·心', '2021', '鹅卵石 · 船木 · 镀锌钢管', 'N°SC-2021-001', 'images/guanxin.jpg')">
             <div class="portfolio-item-inner" style="background: url('images/guanxin.jpg') center/cover no-repeat;"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2021-001</div>
                 <div class="portfolio-overlay-title">观·心</div>
-                <div class="portfolio-overlay-meta">鹅卵石 · 船木 · 镀锌钢管</div>
+                <div class="portfolio-overlay-meta">Guanxin · Pebble, Boat Wood, Steel Pipe</div>
             </div>
         </div>
         <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('似是而非的艺术', '2013', '宝兴大理石', 'N°SC-2013-001', 'images/shishi-eryu.jpg')">
@@ -1294,7 +1329,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2013-001</div>
                 <div class="portfolio-overlay-title">似是而非的艺术</div>
-                <div class="portfolio-overlay-meta">宝兴大理石</div>
+                <div class="portfolio-overlay-meta">Art of Ambiguity · Baoxing Marble</div>
             </div>
         </div>
         <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('对话', '2021', '陨石 · 鹅卵石 · 香樟木 · 镀锌管', 'N°SC-2021-002', 'images/duihua.jpg')">
@@ -1302,7 +1337,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2021-002</div>
                 <div class="portfolio-overlay-title">对话</div>
-                <div class="portfolio-overlay-meta">陨石 · 鹅卵石 · 香樟木 · 镀锌管</div>
+                <div class="portfolio-overlay-meta">Dialogue · Meteorite, Pebble, Wood</div>
             </div>
         </div>
 
@@ -1312,7 +1347,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-001</div>
                 <div class="portfolio-overlay-title">十二生肖砚</div>
-                <div class="portfolio-overlay-meta">宝兴外朗石</div>
+                <div class="portfolio-overlay-meta">Zodiac Inkstone · Baoxing Wailang Stone</div>
             </div>
         </div>
         <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('窗外', '2025', '宝兴外朗石', 'N°IN-2025-002', 'images/chuangwai-1.jpg')">
@@ -1320,7 +1355,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-002</div>
                 <div class="portfolio-overlay-title">窗外</div>
-                <div class="portfolio-overlay-meta">宝兴外朗石</div>
+                <div class="portfolio-overlay-meta">Outside the Window · Baoxing Wailang Stone</div>
             </div>
         </div>
         <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('鱼戏莲叶间系列', '2025', '宝兴外朗石', 'N°IN-2025-003', 'images/yuxi-lianye.jpg')">
@@ -1328,33 +1363,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-003</div>
                 <div class="portfolio-overlay-title">鱼戏莲叶间</div>
-                <div class="portfolio-overlay-meta">宝兴外朗石</div>
-            </div>
-        </div>
-
-        <!-- Urban Sculpture Projects -->
-        <div class="portfolio-item" data-category="urban" onclick="openLightbox('川藏零公里·自驾大本营', '2023', '雅安金鸡关', 'N°UR-2023-001', 'images/chuanzang-linggongli.jpg')">
-            <div class="portfolio-item-inner" style="background: url('images/chuanzang-linggongli.jpg') center/cover no-repeat;"></div>
-            <div class="portfolio-overlay">
-                <div class="portfolio-overlay-num">N°UR-2023-001</div>
-                <div class="portfolio-overlay-title">川藏零公里·自驾大本营</div>
-                <div class="portfolio-overlay-meta">雅安金鸡关</div>
-            </div>
-        </div>
-        <div class="portfolio-item" data-category="urban" onclick="openLightbox('火车拉来的城市', '2017', '六盘水三线文化创意小镇', 'N°UR-2017-001', 'images/sanxian-wamei.jpg')">
-            <div class="portfolio-item-inner" style="background: url('images/sanxian-wamei.jpg') center/cover no-repeat;"></div>
-            <div class="portfolio-overlay">
-                <div class="portfolio-overlay-num">N°UR-2017-001</div>
-                <div class="portfolio-overlay-title">火车拉来的城市</div>
-                <div class="portfolio-overlay-meta">六盘水三线文化创意小镇</div>
-            </div>
-        </div>
-        <div class="portfolio-item" data-category="urban" onclick="openLightbox('龙行十八式', '2022', '四川茶文化公园', 'N°UR-2022-001', 'images/mengdingshan-beilin.jpg')">
-            <div class="portfolio-item-inner" style="background: url('images/mengdingshan-beilin.jpg') center/cover no-repeat;"></div>
-            <div class="portfolio-overlay">
-                <div class="portfolio-overlay-num">N°UR-2022-001</div>
-                <div class="portfolio-overlay-title">龙行十八式</div>
-                <div class="portfolio-overlay-meta">四川茶文化公园</div>
+                <div class="portfolio-overlay-meta">Fish Among Lotus Leaves · Baoxing Wailang Stone</div>
             </div>
         </div>
 
@@ -1364,7 +1373,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°CE-001</div>
                 <div class="portfolio-overlay-title">呐喊</div>
-                <div class="portfolio-overlay-meta">陶瓷</div>
+                <div class="portfolio-overlay-meta">The Scream · Ceramic</div>
             </div>
         </div>
         <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('星空', null, '陶瓷', 'N°CE-002', 'images/xingkong.jpg')">
@@ -1372,7 +1381,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°CE-002</div>
                 <div class="portfolio-overlay-title">星空</div>
-                <div class="portfolio-overlay-meta">陶瓷</div>
+                <div class="portfolio-overlay-meta">Starry Sky · Ceramic</div>
             </div>
         </div>
         <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('国歌', null, '陶瓷', 'N°CE-003', 'images/guoge.jpg')">
@@ -1380,7 +1389,7 @@
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°CE-003</div>
                 <div class="portfolio-overlay-title">国歌</div>
-                <div class="portfolio-overlay-meta">陶瓷</div>
+                <div class="portfolio-overlay-meta">National Anthem · Ceramic</div>
             </div>
         </div>
     </div>
@@ -1390,72 +1399,273 @@
 <section class="section" id="projects" style="background: #f5f2eb;">
     <div class="section-tag">N°03 — Les Projets</div>
     <h2 class="section-title">城市雕塑项目</h2>
-    <p class="section-desc">
-        十余年间，足迹遍布川渝黔鄂各地。从高速公路服务区到城市文化公园，
-        从红色纪念馆到高校校庆雕塑——每一件作品都扎根于土地与文化。
+    <p class="section-desc" style="max-width: 700px;">
+        十余年间，足迹遍布川渝黔鄂湘苏皖京各地。<br>
+        <span style="font-family: var(--serif-en); font-style: italic; color: var(--gray);">
+        Over a decade, spanning Sichuan, Chongqing, Guizhou, Hubei, Hunan, Jiangsu, Anhui, and Beijing.
+        </span><br>
+        从高速公路服务区到城市文化公园，从红色纪念馆到高校校庆——每一件作品都扎根于土地与文化。
     </p>
 
     <div class="timeline">
+        <!-- 2025 -->
         <div class="timeline-item fade-in">
             <div class="timeline-year">2025</div>
-            <div class="timeline-title">湖南怀化辰溪「大酉藏书洞」提级改造雕塑</div>
-            <div class="timeline-desc">汉阙大门（黄砂岩6.8m）、伏胜运书雕塑、106米浮雕长卷、庄子雕塑（GRC 6.8m）等十余组件，综合石雕、玻璃钢防铜、不锈钢等多种材质</div>
+            <div class="timeline-title">湖南怀化辰溪「大酉藏书洞」提级改造</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Dayou Cangshu Cave Cultural Upgrade · Chenxi, Huaihua</div>
+            <div class="timeline-desc">汉阙大门（黄砂岩 6.8m）、伏胜运书雕塑、庄子雕塑（GRC 6.8m）、106米浮雕长卷、孔子（白砂岩 2.8m）、烤竹、整理书简、运输书简、黄帝内经竹简景墙、百家书卷等十余组件，综合石雕、玻璃钢防铜、GRC、不锈钢、镀锌钢板等多种材质</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/daxicang-damen.jpg" loading="lazy" alt="大酉藏书洞汉阙大门"></div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">江苏无锡雪浪书院「蒋重珍」雕像</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Jiang Chongzhen Statue · Xuelang Academy, Wuxi</div>
+            <div class="timeline-desc">青石雕刻，高2.2米 — 2024.9</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">宝兴新寨游客接待中心彩绘装饰</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Baoxing Xinzhai Visitor Center · Decorative Painting</div>
+            <div class="timeline-desc">丙烯、油画等，高2.2米 — 2024.9</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">重庆九龙坡冶金村800米长廊旧改提质</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Jiulongpo Yejincun 800m Corridor Renovation · Chongqing</div>
+            <div class="timeline-desc">老旧社区长廊整体改造与品质提升项目</div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">四川雅安金鸡关「川藏零公里·自驾大本营」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Chuanzang Zero-Kilometer Base Camp · Jinjiguan, Yaan</div>
+            <div class="timeline-desc">《诗与远方的归途》不锈钢 25×15m + 《三级塔》铝板/不锈钢 35m，318国道起点地标性雕塑群 — 2023.5</div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-img"><img src="images/chuanzang-linggongli.jpg" loading="lazy" alt="川藏零公里自驾大本营"></div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-year">2023</div>
-            <div class="timeline-title">四川雅安金鸡关「川藏零公里·自驾大本营」</div>
-            <div class="timeline-desc">诗与远方的归途（不锈钢25×15m）+ 三级塔（铝板/不锈钢35m），318国道起点地标性雕塑群</div>
+            <div class="timeline-title">北京国防部「获国家勋章人物浮雕」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">National Medal Recipients Relief · Beijing Ministry of Defense</div>
+            <div class="timeline-desc">石雕人物浮雕，长3米×高5.5米 — 2023.9</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">四川康定将军广场「岳钟琪骑马像」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Yue Zhongqi Equestrian Statue · Kangding General Square</div>
+            <div class="timeline-desc">铸铜，长3米×高5米 — 2023.9</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">四川雅安芦山「精神堡垒」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Lushan Spirit Fortress · Yaan</div>
+            <div class="timeline-desc">水泥直塑，长3.2米×高18.8米 — 2023.1</div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">湖北武汉中国地质大学建校70周年「永恒」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Eternity · 70th Anniversary of China University of Geosciences</div>
+            <div class="timeline-desc">不锈钢+石材，高6米 — 2022.11</div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-img"><img src="images/dianda-yongheng.jpg" loading="lazy" alt="中国地质大学校庆雕塑"></div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-title">中国地质大学（武汉）建校70周年校庆雕塑「永恒」</div>
-            <div class="timeline-desc">不锈钢+石材，高6米</div>
+            <div class="timeline-title">四川蒙顶山茶诗碑林 · 茶文化公园</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Mengding Mountain Tea Poetry Steles · Tea Culture Park</div>
+            <div class="timeline-desc">300米茶诗碑林（水泥直塑+石雕，长300×高3m）+ 汉阙式简介（石雕 3×4m），世界茶文化发源地 — 2022.9</div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-img"><img src="images/mengdingshan-beilin.jpg" loading="lazy" alt="蒙顶山茶诗碑林"></div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-title">四川蒙顶山茶诗碑林 · 茶文化公园龙行十八式</div>
-            <div class="timeline-desc">世界茶文化发源地蒙顶山，300米茶诗碑林与茶文化主题雕塑群</div>
+            <div class="timeline-title">重庆渝北数据谷「科技之光」艺术装置</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Light of Technology · Yubei Data Valley, Chongqing</div>
+            <div class="timeline-desc">不锈钢巨型装置，35×8.2m，数字化主题公共艺术 — 2022.10</div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-img"><img src="images/keji-zhiguang.jpg" loading="lazy" alt="科技之光艺术装置"></div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-title">重庆渝北数据谷「科技之光」艺术装置</div>
-            <div class="timeline-desc">不锈钢巨型装置，35×8.2m，数字化主题公共艺术</div>
+            <div class="timeline-title">重庆广阳湾水景雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Guangyang Bay Water Feature Sculpture · Chongqing</div>
+            <div class="timeline-desc">石材+不锈钢，长35米×高8.6米 — 2022.12</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">重庆巴南广阳岛水景雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Guangyang Island Water Sculpture · Banan, Chongqing</div>
+            <div class="timeline-desc">水景主题雕塑项目 — 2022</div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-title">贵州盘州「四好农村路」主题雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Four-Good Rural Road Sculpture · Panzhou, Guizhou</div>
+            <div class="timeline-desc">茶文化主题墙（青砖+不锈钢 6×3m）、三线文化主题景墙（花岗岩+不锈钢 12×6m）、三变主体印章（不锈钢 6×2.4m）、刺梨/猕猴桃主题雕塑等 — 2021.11</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">四川牛背山风景区系列雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Niubeishan Mountain Scenic Area Sculpture Series</div>
+            <div class="timeline-desc">《背包客》汉白玉+不锈钢 10×4.3m、《天空之境》《天空云境》不锈钢（直径3m）、石材导视（汉白玉着色 4.2m）、《牛》烤盾钢石英岩 — 2021.11</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/niubeishan.jpg" loading="lazy" alt="牛背山风景区"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">重庆城开高速隧道口水泥直塑彩绘浮雕</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Chengkai Expressway Tunnel Relief · Chongqing</div>
+            <div class="timeline-desc">水泥直塑彩绘浮雕，长65米×高12米 / 长75米×高12米 — 2021.10</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">贵州平塘服务区天文主题雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Astronomy Theme Sculpture · Pingtang Service Area, Guizhou</div>
+            <div class="timeline-desc">《星际》镜面不锈钢+黑色大理石 8m、《探索》拉丝不锈钢+黑色大理石 8m、《交通强国青石浮雕》长76×4.2×1.2m — 2021.6</div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-title">雅安高颐阙文博公园雕塑群</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Gaoyique Cultural Heritage Park Sculpture Group · Yaan</div>
+            <div class="timeline-desc">颛顼、女娲、吴理真、大禹四人铸铜像（2.6m）+ 高颐（红砂岩 2m）、處里疾（青石 2m）、姜维（青石 2m）、雷简夫（汉白玉 2m）、樊敏（汉白玉 1.5m）、苏轼（青石 2m）等历史人物石雕 — 2020.9</div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-img"><img src="images/gaoyique-siren.jpg" loading="lazy" alt="高颐阙文博公园"></div>
         </div>
+
+        <!-- 2019 -->
         <div class="timeline-item fade-in">
-            <div class="timeline-year">2020</div>
-            <div class="timeline-title">雅安高颐阙文博公园雕塑群</div>
-            <div class="timeline-desc">偳顼、女娲、吴理真、大禹四人铸铜像（2.6m）+ 高颐、處里疾、姜维、雷简夫、樊敏、苏轼等历史人物石雕</div>
-        </div>
-        <div class="timeline-item fade-in">
-            <div class="timeline-img"><img src="images/sanxian-wamei.jpg" loading="lazy" alt="三线文化创意小镇"></div>
-        </div>
-        <div class="timeline-item fade-in">
-            <div class="timeline-year">2017 — 2018</div>
-            <div class="timeline-title">六盘水三线文化创意小镇系列雕塑</div>
-            <div class="timeline-desc">《火车拉来的城市》《煤都》《滑雪雕塑》《五十六个民族铸铜雕塑》及水城河提级改造项目系列</div>
+            <div class="timeline-year">2019</div>
+            <div class="timeline-title">重庆大学90周年校庆 · 汉白玉名人肖像</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">90th Anniversary of Chongqing University · White Marble Portraits</div>
+            <div class="timeline-desc">莎士比亚、普希金、托尔斯泰汉白玉石雕（高2.2m）— 2019.8</div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-img"><img src="images/cqu-shakespeare.jpg" loading="lazy" alt="重庆大学汉白玉雕塑"></div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-year">2019</div>
-            <div class="timeline-title">重庆大学90周年校庆 · 汉白玉名人肖像</div>
-            <div class="timeline-desc">莎士比亚、普希金、托尔斯泰汉白玉石雕（高2.2m）+ 宝兴大悲寺三世佛二弟子佛像（5m）</div>
+            <div class="timeline-title">璧山红岩革命烈士「白深富」汉白玉胸像</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Bai Shenfu Bust · Bishan Revolutionary Martyr Memorial</div>
+            <div class="timeline-desc">汉白玉石雕，高220cm — 2019.11</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">宝兴大悲寺三世佛二弟子佛像雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Three Buddhas & Two Disciples · Dabei Temple, Baoxing</div>
+            <div class="timeline-desc">玻璃钢彩绘，高5米 + 白屋诗人吴芳吉泥塑 1.5m — 2019.11 / 2020.5</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">沙坪坝中医院「中医诊脉」雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Traditional Chinese Medicine Pulse Diagnosis · Shapingba Hospital</div>
+            <div class="timeline-desc">玻璃钢防铜，高190cm — 2019.8</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">剑阁军民融合产业园「军民鱼水情」浮雕</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Army-People Bond Relief · Jiange Civil-Military Integration Park</div>
+            <div class="timeline-desc">玻璃钢防铜浮雕 — 2019.2</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">毕节毕贵路「水泥直塑浮雕」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Cement Relief · Bijie Bigui Road</div>
+            <div class="timeline-desc">水泥直塑，长75米×高4.5米 — 2019.9</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">石棉法院「人物浮雕」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Character Relief · Shimian Court</div>
+            <div class="timeline-desc">玻璃钢防铜 — 2019.3</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">六盘水「水城河保护条例」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Water City River Protection Regulations Sculpture</div>
+            <div class="timeline-desc">考盾钢板，2700×310×120cm — 2019.3</div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-title">六盘水党建博物馆展陈雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Party Building Museum Exhibition · Liupanshui</div>
+            <div class="timeline-desc">浮雕墙（树脂防砂岩）、邓小平视察地宗煤矿（玻璃钢防铜）、千锤姑娘（玻璃钢防铜）、入党誓词（不锈钢锻造）、罗师长带病指挥工作场景雕塑等 — 2018.6</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">六盘水「民族马拉松」主题雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Ethnic Marathon Theme Sculpture · Liupanshui</div>
+            <div class="timeline-desc">铸铜，高180cm — 2018.3</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">六盘水三线文化创意长廊系列</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Third-Front Cultural Creative Corridor · Liupanshui</div>
+            <div class="timeline-desc">序章大门（烤盾钢 800cm）、开荒者（烤盾钢+黄砂岩 800cm）、三线文件场景（烤盾钢+花岗岩 800cm）、挖煤场景（烤盾钢+黄砂岩 600cm）、蒸汽/绿皮/红皮/动车火车护栏（不锈钢铸造 1200-2200cm）、三线长卷（树脂防黄砂岩 700cm）、炼钢炉（烤盾钢+黄砂岩 720cm）、老三线新时代（烤盾钢+铸铜 260cm）、勘探者（不锈钢+黄砂岩 660cm）、电力维修（铸铜 180cm）、千纸鹤（不锈钢锻造 180cm）、三变主题印章（不锈钢锻造 180cm）等 — 2018.5</div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-title">六盘水三线文化创意小镇系列</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Third-Front Cultural Town · Liupanshui</div>
+            <div class="timeline-desc">三线文化口号墙（树脂防铜 380cm）、洗煤场景雕塑（不锈钢锻造 280cm）、矿工（金属焊接 245cm）、芦笙主题座椅（不锈钢锻造）等 — 2017</div>
+        </div>
+
+        <!-- 2016 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-title">六盘水水城河梯级改造系列雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Water City River Terrace Sculpture Series · Liupanshui</div>
+            <div class="timeline-desc">凉都记忆（不锈钢锻造 600cm）、火车拉来的城市（铸铁 320cm）、梅花山雪场（玻璃钢烤漆等大人体）、清凉马拉松（玻璃钢烤漆 180cm）、钟山LOGO（不锈钢+玻璃喷砂 直径200cm）、海拔雕塑（玻璃钢烤漆 220cm）、煤都（铸铜 320cm）等 — 2016.10</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/sanxian-wamei.jpg" loading="lazy" alt="三线文化创意小镇"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">贵州虾子服务区「辣椒」主题雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Chili Pepper Sculpture · Xiazi Service Area, Guizhou</div>
+            <div class="timeline-desc">玻璃钢烤漆，2.2×2.2×8m — 2016.3</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">贵州旺隆服务区「红军四渡赤水」雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Four Crossings of Chishui River · Wanglong Service Area</div>
+            <div class="timeline-desc">GRC防红砂岩，1.2×0.2×0.85m — 2016.4</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">贵州印江隧道口浮雕</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Yinjiang Tunnel Entrance Relief</div>
+            <div class="timeline-desc">GRC防铜，23.5×1.17×0.25m — 2016.7</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">贵州印江「军民鱼水情」雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Army-People Bond Sculpture · Yinjiang</div>
+            <div class="timeline-desc">红砂岩实体浇筑，3.2×2×8m — 2016.8</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">重庆涪陵「李蔚如纪念馆」场景雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Li Weiru Memorial Hall · Fuling, Chongqing</div>
+            <div class="timeline-desc">青铜雕塑、场景雕塑（主体120×120×320cm）、红旗背板（玻璃钢烤漆 420×25×340cm）、《开展减租减息》《成立农会》等油画（200×120cm / 300×200cm）— 2016</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">重庆「星汇两江」夜光花装置</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Starlight Flower Installation · Chongqing</div>
+            <div class="timeline-desc">透明树脂，尺寸可变 — 2016.5</div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-title">重庆花木世界「欢乐城堡」主题雕塑</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Happy Castle Theme Sculpture · Chongqing Botanical World</div>
+            <div class="timeline-desc">综合主题雕塑群 — 2015.8</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">安徽芜湖雕塑公园「草船借箭」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Borrowing Arrows with Straw Boats · Wuhu Sculpture Park</div>
+            <div class="timeline-desc">青铜雕塑，200×50×300cm — 2015.10</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-title">重庆铁山坪「松风草堂」</div>
+            <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Songfeng Caotang · Tieshanping, Chongqing</div>
+            <div class="timeline-desc">综合材料牌匾，十年完好如初 — 2015</div>
         </div>
     </div>
 </section>
@@ -1464,8 +1674,11 @@
 <section class="section" id="honors">
     <div class="section-tag">N°04 — Les Distinctions</div>
     <h2 class="section-title">资质与荣誉</h2>
-    <p class="section-desc">
-        从国家级工艺美术职称到行业金奖，每一步都站在雕塑艺术的根基之上。
+    <p class="section-desc" style="max-width: 700px;">
+        从国家级工艺美术职称到行业金奖，每一步都站在雕塑艺术的根基之上。<br>
+        <span style="font-family: var(--serif-en); font-style: italic; color: var(--gray);">
+        From national industrial art titles to industry gold awards — each step grounded in the foundation of sculptural art.
+        </span>
     </p>
 
     <div class="honors-grid">
@@ -1526,7 +1739,10 @@
             <h2>合作洽谈</h2>
             <p>
                 承接城市景观雕塑方案设计、石雕工艺美术品创作、砚台定制、
-                以及跨媒介雕塑实验项目。重庆与宝兴双工作室，全国范围内项目可接。
+                以及跨媒介雕塑实验项目。重庆与宝兴双工作室，全国范围内项目可接。<br>
+                <span style="font-family: var(--serif-en); font-style: italic; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                Commissions for urban landscape sculpture, stone carving, inkstone customization, and cross-media sculptural experiments. Dual studios in Chongqing and Baoxing, projects accepted nationwide.
+                </span>
             </p>
 
             <div class="contact-detail">
