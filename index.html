@@ -6,7 +6,6 @@
     <title>Yanqing Sculpture | 彦青雕塑 — 城市雕塑 · 石雕 · 砚台 · 工艺美术</title>
     <meta name="description" content="彦青雕塑艺术 — 国家一级工艺美术品设计师赵彦青创立。专注城市景观雕塑、汉白玉石雕、穆坪砚台的设计制作。重庆&宝兴双工作室。Yanqing Sculpture · Est. 2016">
     <meta name="keywords" content="城市雕塑,景观雕塑,石雕,汉白玉,砚台,穆坪砚,工艺美术大师,赵彦青,四川美术学院,宝兴,重庆雕塑公司">
-    <meta name="baidu-site-verification" content="codeva-PLACEHOLDER" />
     <!-- Open Graph / Social Share -->
     <meta property="og:title" content="Yanqing Sculpture | 彦青雕塑">
     <meta property="og:description" content="国家一级工艺美术品设计师赵彦青创立。城市雕塑·石雕·砚台。Est. 2016">
@@ -45,6 +44,7 @@
     }
     </script>
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <style>
         :root {
             --black: #0a0a0a;
@@ -205,7 +205,7 @@
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero::after {
             content: '';
             position: absolute;
             top: -50%;
@@ -214,6 +214,7 @@
             height: 200%;
             background: radial-gradient(ellipse at center, rgba(183,156,90,0.03) 0%, transparent 70%);
             animation: heroPulse 8s ease-in-out infinite;
+            pointer-events: none;
         }
 
         @keyframes heroPulse {
@@ -1251,6 +1252,38 @@
             .mobile-nav { display: flex; }
             body { padding-bottom: 4.5rem; }
         }
+        /* ========== BACK TO TOP ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 5.5rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            background: var(--black);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 900;
+            font-size: 1.2rem;
+        }
+        .back-to-top.visible {
+            opacity: 0.85;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .back-to-top { bottom: 5.5rem; right: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -1281,7 +1314,7 @@
         <h1 class="hero-title">
             彦青<span class="gold">雕塑</span>艺术
         </h1>
-        <p class="hero-subtitle">Sculpture Is The Art Of The Intelligence</p>
+        <p class="hero-subtitle">Sculpture Is The Art Of Intelligence</p>
         <div class="hero-line"></div>
     </div>
     <div class="hero-scroll">
@@ -1935,7 +1968,6 @@
         <span class="portfolio-item-placeholder" id="lightboxPlaceholder"></span>
         <img id="lightboxImg" src="" alt="" style="display:none;max-width:100%;max-height:70vh;object-fit:contain;border:1px solid rgba(255,255,255,0.1);">
     </div>
-    </div>
     <div class="lightbox-info">
         <h3 id="lightboxTitle"></h3>
         <p id="lightboxMeta"></p>
@@ -2359,7 +2391,7 @@ MAISON · YANQING · ATELIER · Est. 2016
         
         // Try to open email client
         setTimeout(function() {
-            window.open(mailtoLink, '_blank');
+            window.location.href = mailtoLink;
         }, 500);
         
         setTimeout(function() {
@@ -2370,12 +2402,18 @@ MAISON · YANQING · ATELIER · Est. 2016
         }, 6000);
     }
 
-    // ===== SMOOTH SECTION FADE =====
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
     // ===== DYNAMIC YEAR =====
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // ===== BACK TO TOP =====
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        backBtn.classList.toggle('visible', window.scrollY > 600);
+    });
 </script>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">&#8593;</button>
 
 <!-- ============ MOBILE BOTTOM NAV ============ -->
 <nav class="mobile-nav" id="mobileNav">
