@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Yanqing | 彦青雕塑艺术 — 城市景观雕塑 · 石雕 · 砚台</title>
+    <meta name="description" content="彦青雕塑艺术 — 国家一级工艺美术品设计师赵彦青创立。专注城市景观雕塑、汉白玉石雕、穆坪砚台的设计制作。重庆&宝兴双工作室。Maison · Yanqing · Atelier · Est. MMXVI">
+    <meta name="keywords" content="城市雕塑,景观雕塑,石雕,汉白玉,砚台,穆坪砚,工艺美术大师,赵彦青,四川美术学院,宝兴,重庆雕塑公司">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+        :root {
+            --black: #0a0a0a;
+            --white: #f8f5f0;
+            --gold: #B79C5A;
+            --gold-light: #d4c08a;
+            --gray: #8a8a8a;
+            --gray-dark: #2a2a2a;
+            --serif-cn: 'STSong', 'SimSun', '宋体', 'Noto Serif SC', serif;
+            --serif-en: 'Cormorant Garamond', 'Calibri', 'Times New Roman', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--serif-cn);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(248, 245, 240, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(183, 156, 90, 0.15);
+            transition: all 0.3s ease;
+            padding: 0 2rem;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 1px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .nav-brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-brand {
+            font-family: var(--serif-en);
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-brand span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-family: var(--serif-cn);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: var(--gray-dark);
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--black);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/hero-bg.jpg') center/cover no-repeat;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, #f8f5f0 0%, #efe8da 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(183,156,90,0.03) 0%, transparent 70%);
+            animation: heroPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes heroPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero-overline {
+            font-family: var(--serif-en);
+            font-size: 0.75rem;
+            letter-spacing: 0.5em;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-family: var(--serif-cn);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .gold {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-family: var(--serif-en);
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .hero-line {
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin: 2rem auto;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-scroll span {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .hero-scroll-arrow {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--gray), transparent);
+            animation: scrollArrow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes scrollArrow {
+            0%, 100% { transform: scaleY(1); transform-origin: top; }
+            50% { transform: scaleY(0.3); transform-origin: top; }
+        }
+
+        /* ========== SECTION COMMON ========== */
+        .section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-family: var(--serif-cn);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .section-desc {
+            font-family: var(--serif-cn);
+            font-size: 1.05rem;
+            color: var(--gray);
+            max-width: 600px;
+            line-height: 2;
+            margin-bottom: 4rem;
+        }
+
+        /* ========== ABOUT ========== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+            aspect-ratio: 3/4;
+            background: url('images/work-photo.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .about-visual-inner {
+            padding: 2rem;
+            width: 100%;
+            background: linear-gradient(to top, rgba(10,10,10,0.8), transparent);
+        }
+
+        .about-visual-caption {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--white);
+            opacity: 0.7;
+            text-transform: uppercase;
+        }
+
+        .about-visual-title {
+            font-family: var(--serif-cn);
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-top: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-visual-tag {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-family: var(--serif-en);
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            background: rgba(0,0,0,0.6);
+            padding: 0.4rem 1rem;
+            text-transform: uppercase;
+        }
+
+        .about-text .sup-title {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text h2 {
+            font-family: var(--serif-cn);
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text .lead {
+            font-family: var(--serif-en);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--gold);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .about-text p {
+            font-family: var(--serif-cn);
+            font-size: 0.95rem;
+            color: var(--gray-dark);
+            line-height: 2.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .about-stat-num {
+            font-family: var(--serif-en);
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .about-stat-label {
+            font-family: var(--serif-cn);
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========== PORTFOLIO ========== */
+        .portfolio-filters {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-filter {
+            font-family: var(--serif-cn);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray);
+            padding: 0.3rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .portfolio-filter::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .portfolio-filter.active,
+        .portfolio-filter:hover {
+            color: var(--black);
+        }
+
+        .portfolio-filter.active::after,
+        .portfolio-filter:hover::after {
+            width: 100%;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .portfolio-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .portfolio-item-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e0dbd0, #d5cfc0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        .portfolio-item:hover .portfolio-item-inner {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item-placeholder {
+            font-family: var(--serif-en);
+            font-size: 3rem;
+            color: rgba(0,0,0,0.06);
+            font-weight: 600;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(to top, rgba(10,10,10,0.85), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay-num {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+
+        .portfolio-overlay-title {
+            font-family: var(--serif-cn);
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .portfolio-overlay-meta {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* ========== PROJECTS TIMELINE ========== */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--gold), rgba(183,156,90,0.1));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0.6rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            transform: translateX(-3.5px);
+        }
+
+        .timeline-year {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-title {
+            font-family: var(--serif-cn);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-desc {
+            font-family: var(--serif-cn);
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .timeline-img {
+            margin: 0.8rem 0 1.2rem 0;
+        }
+
+        .timeline-img img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: block;
+        }
+
+        /* ========== HONORS ========== */
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .honor-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            transition: background 0.3s;
+        }
+
+        .honor-card:hover {
+            background: #f0ece3;
+        }
+
+        .honor-card-year {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .honor-card-award {
+            font-family: var(--serif-cn);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .honor-card-detail {
+            font-family: var(--serif-cn);
+            font-size: 0.8rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .honor-card-medal {
+            font-family: var(--serif-en);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 0.25rem 0.8rem;
+            border: 1px solid var(--gold);
+        }
+
+        .contact-qr {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--white);
+            display: inline-block;
+        }
+
+        .contact-qr img {
+            width: 140px;
+            height: 140px;
+            display: block;
+        }
+
+        .contact-qr-caption {
+            font-family: var(--serif-cn);
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-align: center;
+            margin-top: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 8rem 2rem;
+        }
+
+        .contact-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .contact-info h2 {
+            font-family: var(--serif-cn);
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .contact-info .tag {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            font-family: var(--serif-cn);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 2.2;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail-label {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-detail-value {
+            font-family: var(--serif-cn);
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-studios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-studio {
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-studio-city {
+            font-family: var(--serif-en);
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-studio-name {
+            font-family: var(--serif-cn);
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-studio-addr {
+            font-family: var(--serif-cn);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem 1.5rem;
+            color: var(--white);
+            font-family: var(--serif-cn);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            font-family: var(--serif-en);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .contact-form button:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--black);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: var(--serif-en);
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-tagline {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+        }
+
+        .footer-copy {
+            font-family: var(--serif-cn);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
+            margin-top: 2rem;
+        }
+
+        /* ========== CHAT WIDGET ========== */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .chat-toggle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--black);
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .chat-toggle:hover {
+            background: var(--gold);
+        }
+
+        .chat-toggle svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+            transition: stroke 0.3s;
+        }
+
+        .chat-toggle:hover svg {
+            stroke: var(--black);
+        }
+
+        .chat-panel {
+            position: absolute;
+            bottom: 72px;
+            right: 0;
+            width: 380px;
+            max-height: 520px;
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-panel.open {
+            display: flex;
+        }
+
+        .chat-header {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            background: var(--white);
+        }
+
+        .chat-header-title {
+            font-family: var(--serif-cn);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .chat-header-subtitle {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+            margin-top: 0.2rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            max-height: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-msg {
+            display: flex;
+            gap: 0.8rem;
+            max-width: 85%;
+        }
+
+        .chat-msg.bot {
+            align-self: flex-start;
+        }
+
+        .chat-msg.bot .chat-bubble {
+            background: #f0ece3;
+            border-radius: 2px 12px 12px 12px;
+        }
+
+        .chat-msg.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .chat-msg.user .chat-bubble {
+            background: var(--black);
+            color: var(--white);
+            border-radius: 12px 2px 12px 12px;
+        }
+
+        .chat-bubble {
+            padding: 0.8rem 1rem;
+            font-family: var(--serif-cn);
+            font-size: 0.82rem;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        .chat-input-area {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 0.7rem 1rem;
+            font-family: var(--serif-cn);
+            font-size: 0.85rem;
+            outline: none;
+            border-radius: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input-area input:focus {
+            border-color: var(--gold);
+        }
+
+        .chat-input-area button {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 2px;
+        }
+
+        .chat-input-area button:hover {
+            background: #a0873d;
+        }
+
+        .chat-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.5rem 1.5rem 1rem;
+        }
+
+        .chat-suggestion {
+            font-family: var(--serif-cn);
+            font-size: 0.72rem;
+            padding: 0.35rem 0.9rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--gray-dark);
+            background: transparent;
+        }
+
+        .chat-suggestion:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0.3rem 0;
+        }
+        .typing-indicator span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            animation: typing 1.4s ease-in-out infinite;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+            30% { opacity: 1; transform: translateY(-3px); }
+        }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10,10,10,0.95);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: var(--white);
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            font-family: var(--serif-en);
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox-close:hover {
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 80vw;
+            max-height: 70vh;
+            background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-info {
+            color: var(--white);
+            text-align: center;
+            margin-top: 2rem;
+            max-width: 500px;
+        }
+
+        .lightbox-info h3 {
+            font-family: var(--serif-cn);
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .lightbox-info p {
+            font-family: var(--serif-en);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.1em;
+            font-style: italic;
+        }
+
+        .lightbox-info .collection-num {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-top: 1rem;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .honors-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 5rem 1.5rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .chat-panel { width: calc(100vw - 3rem); right: -0.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.06);
+                gap: 1.5rem;
+            }
+            .about-stats { grid-template-columns: 1fr; }
+            .contact-studios { grid-template-columns: 1fr; }
+            .timeline { padding-left: 2rem; }
+            .timeline-item::before { left: -2rem; }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-brand-wrap">
+            <img src="logo.png" alt="彦青雕塑" class="nav-logo">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">关于</a></li>
+            <li><a href="#portfolio">作品</a></li>
+            <li><a href="#projects">项目</a></li>
+            <li><a href="#honors">荣誉</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-overline">Maison · Yanqing · Atelier · Est. MMXVI</div>
+        <h1 class="hero-title">
+            彦青<span class="gold">雕塑</span>艺术
+        </h1>
+        <p class="hero-subtitle">Sculpture Is The Art Of The Intelligence</p>
+        <div class="hero-line"></div>
+    </div>
+    <div class="hero-scroll">
+        <span>Découvrir</span>
+        <div class="hero-scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+    <div class="section-tag">N°01 — L'Atelier</div>
+    <div class="about-grid">
+        <div class="about-visual fade-in">
+            <div class="about-visual-tag">SINCE MMXVI</div>
+            <div class="about-visual-inner">
+                <div class="about-visual-caption">Chongqing · Baoxing</div>
+                <div class="about-visual-title">赵彦青</div>
+            </div>
+        </div>
+        <div class="about-text fade-in">
+            <div class="sup-title">Founder &amp; Art Director</div>
+            <h2>两个工作室，<br>一种匠心</h2>
+            <p class="lead">"不像外表那么圆滑，内心依然有棱有角。"</p>
+            <p>
+                赵彦青，国家一级工艺美术品设计师、四川省工艺美术大师、穆坪砚制作技艺市级非遗传承人。
+                2013年毕业于四川美术学院雕塑系，师从传统雕塑技艺，深耕当代雕塑语言。
+            </p>
+            <p>
+                2016年创立重庆彦青雕塑艺术有限公司，专攻城市景观雕塑的设计、制作与安装。
+                后于四川雅安宝兴县设立第二工作室，扎根汉白玉之乡，复兴穆坪砚制作技艺，
+                探索石雕与砚台的艺术边界。
+            </p>
+            <div class="section-divider"></div>
+            <div class="about-stats">
+                <div>
+                    <div class="about-stat-num">30+</div>
+                    <div class="about-stat-label">城市雕塑项目</div>
+                </div>
+                <div>
+                    <div class="about-stat-num">9</div>
+                    <div class="about-stat-label">国家级省级金奖</div>
+                </div>
+                <div>
+                    <div class="about-stat-num">MMXVI</div>
+                    <div class="about-stat-label">品牌创立年份</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="section" id="portfolio">
+    <div class="section-tag">N°02 — Les OEuvres</div>
+    <h2 class="section-title">作品集</h2>
+    <p class="section-desc">
+        从城市公共艺术到案头文房雅器，跨越材料的雕塑实践。
+        石雕、铸铜、砚台、陶瓷——每一种材料都是与大地的对话。
+    </p>
+
+    <div class="portfolio-filters">
+        <button class="portfolio-filter active" onclick="filterPortfolio('all', this)">全部作品</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('sculpture', this)">石雕创作</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('inkstone', this)">制砚作品</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('urban', this)">城市雕塑</button>
+        <button class="portfolio-filter" onclick="filterPortfolio('ceramic', this)">陶瓷艺术</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Sculptures -->
+        <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('观·心', '2021', '鹅卵石 · 船木 · 镀锌钢管', 'N°SC-2021-001', 'images/guanxin.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/guanxin.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°SC-2021-001</div>
+                <div class="portfolio-overlay-title">观·心</div>
+                <div class="portfolio-overlay-meta">鹅卵石 · 船木 · 镀锌钢管</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('似是而非的艺术', '2013', '宝兴大理石', 'N°SC-2013-001', 'images/shishi-eryu.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/shishi-eryu.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°SC-2013-001</div>
+                <div class="portfolio-overlay-title">似是而非的艺术</div>
+                <div class="portfolio-overlay-meta">宝兴大理石</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('对话', '2021', '陨石 · 鹅卵石 · 香樟木 · 镀锌管', 'N°SC-2021-002', 'images/duihua.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/duihua.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°SC-2021-002</div>
+                <div class="portfolio-overlay-title">对话</div>
+                <div class="portfolio-overlay-meta">陨石 · 鹅卵石 · 香樟木 · 镀锌管</div>
+            </div>
+        </div>
+
+        <!-- Inkstones -->
+        <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('十二生肖砚', '2025', '宝兴外朗石', 'N°IN-2025-001', 'images/shiershengxiao.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/shiershengxiao.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°IN-2025-001</div>
+                <div class="portfolio-overlay-title">十二生肖砚</div>
+                <div class="portfolio-overlay-meta">宝兴外朗石</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('窗外', '2025', '宝兴外朗石', 'N°IN-2025-002', 'images/chuangwai-1.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/chuangwai-1.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°IN-2025-002</div>
+                <div class="portfolio-overlay-title">窗外</div>
+                <div class="portfolio-overlay-meta">宝兴外朗石</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('鱼戏莲叶间系列', '2025', '宝兴外朗石', 'N°IN-2025-003', 'images/yuxi-lianye.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/yuxi-lianye.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°IN-2025-003</div>
+                <div class="portfolio-overlay-title">鱼戏莲叶间</div>
+                <div class="portfolio-overlay-meta">宝兴外朗石</div>
+            </div>
+        </div>
+
+        <!-- Urban Sculpture Projects -->
+        <div class="portfolio-item" data-category="urban" onclick="openLightbox('川藏零公里·自驾大本营', '2023', '雅安金鸡关', 'N°UR-2023-001', 'images/chuanzang-linggongli.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/chuanzang-linggongli.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°UR-2023-001</div>
+                <div class="portfolio-overlay-title">川藏零公里·自驾大本营</div>
+                <div class="portfolio-overlay-meta">雅安金鸡关</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="urban" onclick="openLightbox('火车拉来的城市', '2017', '六盘水三线文化创意小镇', 'N°UR-2017-001', 'images/sanxian-wamei.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/sanxian-wamei.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°UR-2017-001</div>
+                <div class="portfolio-overlay-title">火车拉来的城市</div>
+                <div class="portfolio-overlay-meta">六盘水三线文化创意小镇</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="urban" onclick="openLightbox('龙行十八式', '2022', '四川茶文化公园', 'N°UR-2022-001', 'images/mengdingshan-beilin.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/mengdingshan-beilin.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°UR-2022-001</div>
+                <div class="portfolio-overlay-title">龙行十八式</div>
+                <div class="portfolio-overlay-meta">四川茶文化公园</div>
+            </div>
+        </div>
+
+        <!-- Ceramics -->
+        <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('呐喊', null, '陶瓷', 'N°CE-001', 'images/nahan.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/nahan.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°CE-001</div>
+                <div class="portfolio-overlay-title">呐喊</div>
+                <div class="portfolio-overlay-meta">陶瓷</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('星空', null, '陶瓷', 'N°CE-002', 'images/xingkong.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/xingkong.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°CE-002</div>
+                <div class="portfolio-overlay-title">星空</div>
+                <div class="portfolio-overlay-meta">陶瓷</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('国歌', null, '陶瓷', 'N°CE-003', 'images/guoge.jpg')">
+            <div class="portfolio-item-inner" style="background: url('images/guoge.jpg') center/cover no-repeat;"></div>
+            <div class="portfolio-overlay">
+                <div class="portfolio-overlay-num">N°CE-003</div>
+                <div class="portfolio-overlay-title">国歌</div>
+                <div class="portfolio-overlay-meta">陶瓷</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROJECTS TIMELINE ============ -->
+<section class="section" id="projects" style="background: #f5f2eb;">
+    <div class="section-tag">N°03 — Les Projets</div>
+    <h2 class="section-title">城市雕塑项目</h2>
+    <p class="section-desc">
+        十余年间，足迹遍布川渝黔鄂各地。从高速公路服务区到城市文化公园，
+        从红色纪念馆到高校校庆雕塑——每一件作品都扎根于土地与文化。
+    </p>
+
+    <div class="timeline">
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title">湖南怀化辰溪「大酉藏书洞」提级改造雕塑</div>
+            <div class="timeline-desc">汉阙大门（黄砂岩6.8m）、伏胜运书雕塑、106米浮雕长卷、庄子雕塑（GRC 6.8m）等十余组件，综合石雕、玻璃钢防铜、不锈钢等多种材质</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/chuanzang-linggongli.jpg" loading="lazy" alt="川藏零公里自驾大本营"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">四川雅安金鸡关「川藏零公里·自驾大本营」</div>
+            <div class="timeline-desc">诗与远方的归途（不锈钢25×15m）+ 三级塔（铝板/不锈钢35m），318国道起点地标性雕塑群</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/dianda-yongheng.jpg" loading="lazy" alt="中国地质大学校庆雕塑"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">中国地质大学（武汉）建校70周年校庆雕塑「永恒」</div>
+            <div class="timeline-desc">不锈钢+石材，高6米</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/mengdingshan-beilin.jpg" loading="lazy" alt="蒙顶山茶诗碑林"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">四川蒙顶山茶诗碑林 · 茶文化公园龙行十八式</div>
+            <div class="timeline-desc">世界茶文化发源地蒙顶山，300米茶诗碑林与茶文化主题雕塑群</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/keji-zhiguang.jpg" loading="lazy" alt="科技之光艺术装置"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">重庆渝北数据谷「科技之光」艺术装置</div>
+            <div class="timeline-desc">不锈钢巨型装置，35×8.2m，数字化主题公共艺术</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/gaoyique-siren.jpg" loading="lazy" alt="高颐阙文博公园"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-title">雅安高颐阙文博公园雕塑群</div>
+            <div class="timeline-desc">偳顼、女娲、吴理真、大禹四人铸铜像（2.6m）+ 高颐、處里疾、姜维、雷简夫、樊敏、苏轼等历史人物石雕</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/sanxian-wamei.jpg" loading="lazy" alt="三线文化创意小镇"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2017 — 2018</div>
+            <div class="timeline-title">六盘水三线文化创意小镇系列雕塑</div>
+            <div class="timeline-desc">《火车拉来的城市》《煤都》《滑雪雕塑》《五十六个民族铸铜雕塑》及水城河提级改造项目系列</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/cqu-shakespeare.jpg" loading="lazy" alt="重庆大学汉白玉雕塑"></div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-title">重庆大学90周年校庆 · 汉白玉名人肖像</div>
+            <div class="timeline-desc">莎士比亚、普希金、托尔斯泰汉白玉石雕（高2.2m）+ 宝兴大悲寺三世佛二弟子佛像（5m）</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ HONORS ============ -->
+<section class="section" id="honors">
+    <div class="section-tag">N°04 — Les Distinctions</div>
+    <h2 class="section-title">资质与荣誉</h2>
+    <p class="section-desc">
+        从国家级工艺美术职称到行业金奖，每一步都站在雕塑艺术的根基之上。
+    </p>
+
+    <div class="honors-grid">
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">2024</div>
+            <div class="honor-card-award">国家一级工艺美术品设计师</div>
+            <div class="honor-card-detail">高级技师 · 中华人民共和国人力资源和社会保障部</div>
+            <div class="honor-card-medal">NATIONAL LEVEL</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">省级</div>
+            <div class="honor-card-award">四川省工艺美术大师</div>
+            <div class="honor-card-detail">省级工艺美术大师称号</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">非遗</div>
+            <div class="honor-card-award">穆坪砚制作技艺 · 市级非遗传承人</div>
+            <div class="honor-card-detail">雅安市非物质文化遗产代表性项目</div>
+            <div class="honor-card-medal">INTANGIBLE HERITAGE</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">2023</div>
+            <div class="honor-card-award">《观·心》中轻万花杯 · 金奖</div>
+            <div class="honor-card-detail">第十四届中国（大连）轻工商品博览会创新产品奖</div>
+            <div class="honor-card-medal">GOLD AWARD</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">2023</div>
+            <div class="honor-card-award">《九螭穿环》中轻万花杯 · 银奖</div>
+            <div class="honor-card-detail">第十四届中国（大连）轻工商品博览会创新产品奖</div>
+            <div class="honor-card-medal">SILVER AWARD</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">2020</div>
+            <div class="honor-card-award">《香蕉与蝈蝈》天府宝岛 · 金奖</div>
+            <div class="honor-card-detail">"太阳神鸟杯"天府·宝岛工业设计大赛工艺雕塑类</div>
+            <div class="honor-card-medal">GOLD AWARD</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">2020</div>
+            <div class="honor-card-award">《梦中女神》《生活美学》双金奖</div>
+            <div class="honor-card-detail">中国（大连）国际文化旅游产业交易博览会"金牡丹杯"</div>
+            <div class="honor-card-medal">DOUBLE GOLD</div>
+        </div>
+        <div class="honor-card fade-in">
+            <div class="honor-card-year">雅安</div>
+            <div class="honor-card-award">雅州工匠 · 雅州菁英</div>
+            <div class="honor-card-detail">雅安百千人才计划 · 宝兴县五一劳动奖章</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact-section" id="contact">
+    <div class="contact-inner">
+        <div class="contact-info">
+            <div class="tag">N°05 — Contact</div>
+            <h2>合作洽谈</h2>
+            <p>
+                承接城市景观雕塑方案设计、石雕工艺美术品创作、砚台定制、
+                以及跨媒介雕塑实验项目。重庆与宝兴双工作室，全国范围内项目可接。
+            </p>
+
+            <div class="contact-detail">
+                <div class="contact-detail-label">Telephone</div>
+                <div class="contact-detail-value">134-5235-5322</div>
+            </div>
+            <div class="contact-detail">
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-value">1553955932@qq.com</div>
+            </div>
+
+            <div class="contact-studios">
+                <div class="contact-studio">
+                    <div class="contact-studio-city">Chongqing</div>
+                    <div class="contact-studio-name">重庆彦青雕塑艺术有限公司</div>
+                    <div class="contact-studio-addr">重庆市沙坪坝区大学城学智路155号<br>金科廊桥水乡花蝶墅57幢4</div>
+                </div>
+                <div class="contact-studio">
+                    <div class="contact-studio-city">Baoxing</div>
+                    <div class="contact-studio-name">宝兴彦青雕塑艺术有限公司</div>
+                    <div class="contact-studio-addr">四川省雅安市宝兴县灵关镇河口村</div>
+                </div>
+            </div>
+
+            <div class="contact-qr">
+                <img src="wechat-qr.png" alt="微信二维码">
+                <div class="contact-qr-caption">扫码添加微信</div>
+            </div>
+        </div>
+
+        <form class="contact-form fade-in" onsubmit="handleContact(event)">
+            <input type="text" placeholder="您的姓名 / Nom" required>
+            <input type="text" placeholder="联系电话 / Téléphone" required>
+            <input type="text" placeholder="项目类型（城市雕塑 / 石雕 / 砚台 / 其他）">
+            <textarea placeholder="请简述您的项目需求 / Décrivez votre projet" required></textarea>
+            <button type="submit">Envoyer · 发送</button>
+        </form>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="footer-brand">MAISON <span>·</span> YANQING <span>·</span> ATELIER</div>
+    <div class="footer-tagline">Est. MMXVI · Chongqing &amp; Baoxing</div>
+    <div class="footer-copy">
+        &copy; 2016–2026 重庆彦青雕塑艺术有限公司 · 宝兴彦青雕塑艺术有限公司<br>
+        国家一级工艺美术品设计师 · 四川省工艺美术大师 · 穆坪砚非遗传承人
+    </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content" id="lightboxContent">
+        <span class="portfolio-item-placeholder" id="lightboxPlaceholder"></span>
+        <img id="lightboxImg" src="" alt="" style="display:none;max-width:100%;max-height:70vh;object-fit:contain;border:1px solid rgba(255,255,255,0.1);">
+    </div>
+    </div>
+    <div class="lightbox-info">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxMeta"></p>
+        <div class="collection-num" id="lightboxNum"></div>
+    </div>
+</div>
+
+<!-- ============ CHAT WIDGET ============ -->
+<div class="chat-widget">
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <div class="chat-header-title">彦青雕塑 · AI 顾问</div>
+            <div class="chat-header-subtitle">Conseiller Artistique</div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg bot">
+                <div class="chat-bubble">
+                    您好！我是彦青雕塑的AI艺术顾问 ✨<br><br>可以帮您了解：<br>· 城市雕塑项目合作<br>· 砚台与石雕定制<br>· 作品咨询与报价流程<br><br>试试直接问我：<br>· "川藏零公里项目"<br>· "观心是什么材料做的"<br>· "怎么定制砚台"
+                </div>
+            </div>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions">
+            <button class="chat-suggestion" onclick="sendPreset('城市雕塑项目怎么合作？')">城市雕塑合作</button>
+            <button class="chat-suggestion" onclick="sendPreset('砚台可以定制吗？')">砚台定制</button>
+            <button class="chat-suggestion" onclick="sendPreset('你们做过哪些大项目？')">项目案例</button>
+            <button class="chat-suggestion" onclick="sendPreset('报价和流程是怎样的？')">报价流程</button>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="输入您的问题…" onkeydown="if(event.key==='Enter')sendMessage()">
+            <button onclick="sendMessage()">发送</button>
+        </div>
+    </div>
+    <button class="chat-toggle" onclick="toggleChat()" aria-label="打开对话">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+</div>
+
+<script>
+    // ===== MOBILE MENU =====
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('mobile-open');
+    }
+
+    // ===== SCROLL EFFECTS =====
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ===== FADE-IN ON SCROLL =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ===== PORTFOLIO FILTER =====
+    function filterPortfolio(cat, btn) {
+        document.querySelectorAll('.portfolio-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.style.display = (cat === 'all' || item.dataset.category === cat) ? 'block' : 'none';
+        });
+    }
+
+    // ===== LIGHTBOX =====
+    function openLightbox(title, year, meta, num, imgSrc) {
+        document.getElementById('lightboxTitle').textContent = title;
+        document.getElementById('lightboxMeta').textContent = (year ? year + ' · ' : '') + meta;
+        document.getElementById('lightboxNum').textContent = num;
+        const placeholder = document.getElementById('lightboxPlaceholder');
+        const img = document.getElementById('lightboxImg');
+        if (imgSrc) {
+            img.src = imgSrc;
+            img.style.display = 'block';
+            placeholder.style.display = 'none';
+        } else {
+            img.style.display = 'none';
+            placeholder.style.display = 'flex';
+        }
+        document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ===== CHAT WIDGET =====
+    function toggleChat() {
+        const panel = document.getElementById('chatPanel');
+        if (panel.classList.contains('open')) {
+            panel.classList.remove('open');
+        } else {
+            openChat();
+        }
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const msg = input.value.trim();
+        if (!msg) return;
+        addMessage(msg, 'user');
+        input.value = '';
+        document.getElementById('chatSuggestions').style.display = 'none';
+
+        // Show typing indicator
+        const typing = document.createElement('div');
+        typing.className = 'chat-msg bot';
+        typing.id = 'typingIndicator';
+        typing.innerHTML = '<div class="chat-bubble"><div class="typing-indicator"><span></span><span></span><span></span></div></div>';
+        document.getElementById('chatMessages').appendChild(typing);
+        document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+
+        const delay = 600 + Math.random() * 800;
+        setTimeout(() => {
+            // Remove typing indicator
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) indicator.remove();
+            
+            const botReply = getBotReply(msg);
+            addMessage(botReply, 'bot');
+        }, delay);
+    }
+
+    function sendPreset(msg) {
+        document.getElementById('chatInput').value = msg;
+        sendMessage();
+    }
+
+    function addMessage(text, type) {
+        const div = document.createElement('div');
+        div.className = 'chat-msg ' + type;
+        div.innerHTML = '<div class="chat-bubble">' + text.replace(/\n/g, '<br>') + '</div>';
+        const container = document.getElementById('chatMessages');
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    }
+
+    // ===== AI KNOWLEDGE BASE =====
+    const knowledgeBase = [
+        // 品牌 & 身份
+        { keys: ['你是谁','介绍','彦青雕塑','品牌','公司','赵彦青','老赵'], reply:
+`您好，我是彦青雕塑的AI艺术顾问。让我为您介绍：
+
+MAISON · YANQING · ATELIER · Est. 2016
+
+赵彦青先生，国家一级工艺美术品设计师（高级技师）、四川省工艺美术大师、雅安市市级非遗传承人（穆坪砚制作技艺）。毕业于四川美术学院雕塑系，2016年创立彦青雕塑。
+
+我们拥有双工作室：
+<strong>重庆</strong> — 城市景观雕塑 | <strong>雅安宝兴</strong> — 石雕 & 砚台
+
+30+城市雕塑项目 · 9项金奖 · 川美教学基地` },
+        // 城市雕塑项目合作
+        { keys: ['城市雕塑','景观雕塑','项目合作','公共艺术','雕塑设计','外包','招标','政府采购'], reply:
+`感谢关注！城市雕塑项目合作流程：
+
+<strong>第一步：需求沟通</strong>
+了解项目背景、主题方向、场地条件、预算范围
+
+<strong>第二步：概念方案</strong>
+提供创意概念、手绘草图或3D效果图（1-2周）
+
+<strong>第三步：深化设计</strong>
+确定材料（汉白玉/花岗岩/铸铜/不锈钢等）、工艺方案、施工计划
+
+<strong>第四步：制作安装</strong>
+工厂预制 → 运输 → 现场安装 → 验收
+
+我们擅长：城市地标、主题公园、校园雕塑、红色文化、高速公路景观等。<br>
+<a href="#projects" onclick="document.getElementById('chatPanel').classList.remove('open');return true;" style="color:var(--gold);text-decoration:underline;">查看项目案例 →</a>` },
+        // 砚台定制
+        { keys: ['砚台','砚','穆坪','外朗砚','定制砚台','十二生肖','窗外','鱼戏莲叶','芭蕉砚'], reply:
+`穆坪砚（外朗砚）— 雅安宝兴独有的石砚艺术
+
+赵彦青先生是穆坪砚制作技艺市级非遗传承人，每一方砚台均为纯手工雕刻孤品。
+
+<strong>现有系列：</strong>
+· 十二生肖砚 — 十二方成套，每方品鉴"发墨如油"
+· 《窗外》 — 以窗观心，砚中见天地
+· 《鱼戏莲叶间》系列 — 灵动诗意
+· 《芭蕉砚》系列 — 质朴天然
+
+<strong>定制说明：</strong>
+材质：雅安宝兴外朗石 | 纯手工雕刻 | 附收藏证书<br>
+接受来图定制和自由创作委托。工期约4-8周。<br>
+<a href="#portfolio" onclick="document.getElementById('chatPanel').classList.remove('open');return true;" style="color:var(--gold);text-decoration:underline;">查看砚台作品 →</a>` },
+        // 石雕创作
+        { keys: ['石雕','汉白玉','大理石','石雕作品','似是而非','观心','对话','纯艺术','个人作品'], reply:
+`赵彦青先生的石雕创作，强调"从材料本身出发"——
+
+<strong>《观·心》</strong> 鹅卵石 · 船木 · 镀锌钢管<br>
+"从河边捡回一块鹅卵石，当地人叫它'黄皮黑胆'。切开后发现两种石质共同合体……一点点剥离黄色外皮，看到它原本的样子——不像外表那么圆滑，内心依然有棱有角。"
+
+<strong>《似是而非的艺术》</strong> 宝兴大理石<br>
+2013年毕业创作，对材料本质的初次探索
+
+<strong>《对话》</strong> 陨石 · 鹅卵石 · 香樟木 · 镀锌管<br>
+多种材质跨越时空的对话<br>
+<a href="#portfolio" onclick="document.getElementById('chatPanel').classList.remove('open');return true;" style="color:var(--gold);text-decoration:underline;">欣赏石雕作品 →</a>` },
+        // 陶瓷艺术
+        { keys: ['陶瓷','陶艺','呐喊','星空','国歌','梦','中秋','童谣'], reply:
+`赵彦青先生的陶瓷艺术作品系列，融合雕塑语言与陶瓷媒介——
+
+<strong>创作理念：</strong>以泥土与火焰为媒介，表达对人类情感与自然力量的思考。
+
+<strong>代表作品：</strong>
+· 《呐喊》— 内心力量的迸发
+· 《星空》— 宇宙与人的对话
+· 《国歌》— 文化记忆的雕塑化表达
+· 《梦》《中秋》《童谣》— 诗意与日常的碰撞
+
+<a href="#portfolio" onclick="document.getElementById('chatPanel').classList.remove('open');return true;" style="color:var(--gold);text-decoration:underline;">浏览陶瓷作品 →</a>` },
+        // 报价 & 流程
+        { keys: ['报价','价格','多少钱','费用','预算','收费','怎么收费'], reply:
+`每个项目因规模、材料、工艺复杂度不同，报价差异较大。
+
+<strong>城市雕塑项目</strong> — 几万元至数百万元不等，视具体方案而定
+<strong>砚台定制</strong> — 数千元起，根据尺寸、复杂度定价
+<strong>石雕创作</strong> — 面议
+
+<strong>一般流程：</strong>
+需求对接 → 方案设计 → 确认报价 → 签订合同 → 制作安装
+
+建议您先描述项目基本情况（位置/主题/尺寸/材料偏好），我们提供初步估算。欢迎直接致电 134-5235-5322 与赵老师沟通，报价更准确。` },
+        // 资质荣誉
+        { keys: ['资质','荣誉','获奖','金奖','大师','非遗','传承人','证书'], reply:
+`<strong>赵彦青先生的主要荣誉：</strong>
+
+· 国家一级工艺美术品设计师（高级技师）
+· 四川省工艺美术大师
+· 雅安市市级非遗传承人（穆坪砚制作技艺）
+· 四川省专家服务团专家
+· 四川省石雕技能考评员
+· 雅安百千人才计划"雅州菁英"
+· 雅州工匠
+· 宝兴县五一劳动奖章获得者
+
+<strong>重要奖项：</strong>
+🏆 第55届"金凤凰"创新产品设计大赛 <strong>银奖</strong>
+🏆 中国（大连）国际文旅博览会"金牡丹杯" <strong>金奖 ×2</strong>
+🏆 "太阳神鸟杯"天府·宝岛工业设计大赛 <strong>金奖 + 银奖</strong>
+🏆 第十四届"中轻万花杯"创新产品奖 <strong>金奖 + 银奖</strong>` },
+        // 川藏零公里项目
+        { keys: ['川藏','零公里','自驾','大本营','金鸡关','318','国道'], reply:
+`📍 <strong>雅安金鸡关 — "川藏零公里·自驾大本营"</strong>
+2023年完成，318国道起点地标性雕塑群。
+
+这是赵彦青先生近年最具代表性的城市雕塑项目之一，融合川藏文化与自驾精神，已成为雅安市重要城市文化地标。
+
+<a href="#projects" onclick="document.getElementById('chatPanel').classList.remove('open');return true;" style="color:var(--gold);text-decoration:underline;">查看项目详情 & 实拍照片 →</a>` },
+        // 联系方式
+        { keys: ['联系','电话','微信','地址','邮箱','工作室','在哪里','怎么联系'], reply:
+`<strong>欢迎直接联系赵彦青先生：</strong>
+
+📞 电话：134-5235-5322
+📧 邮箱：1553955932@qq.com
+
+🏛 <strong>重庆工作室：</strong>
+重庆市沙坪坝区大学城学智路155号
+金科廊桥水乡花蝶墅57幢4
+
+🏛 <strong>雅安宝兴工作室：</strong>
+四川省雅安市宝兴县灵关镇河口村
+
+📱 微信二维码请见官网底部"联系"板块
+<a href="#contact" onclick="document.getElementById('chatPanel').classList.remove('open');return true;" style="color:var(--gold);text-decoration:underline;">查看完整联系方式 →</a>` },
+        // 大酉藏书洞（最新项目）
+        { keys: ['大酉','藏书洞','辰溪','伏胜','汉阙','最新','2025'], reply:
+`<strong>最新项目：湖南辰溪大酉藏书洞文化景区</strong>（2025年进行中）
+
+这是一个规模宏大的文化雕塑群：
+· 汉阙大门 — 高6.8m，气势恢宏
+· 伏胜运书主题雕塑
+· 庄子雕塑群
+· 106米文化浮雕长卷
+· 共计11个雕塑艺术组件
+
+这是赵彦青先生近期工作量最大的城市雕塑项目，展现了大型文化雕塑群的完整设计与施工能力。` }
+    ];
+
+    // ===== CHAT GREETING =====
+    const greetingVariants = [
+        '您好！我是彦青雕塑的AI艺术顾问 ✨\n\n可以帮您了解：城市雕塑合作、砚台定制、作品咨询、报价流程等。\n\n也可以直接问我具体问题，比如：\n· "川藏零公里项目"<br>· "观心是什么材料做的"<br>· "怎么定制砚台"',
+        'Bonjour！欢迎来到彦青雕塑 🗿\n\n我是品牌AI顾问，熟悉赵彦青先生的全部作品、项目经历和合作流程。\n\n有什么可以帮您的？'
+    ];
+
+    function getBotReply(msg) {
+        const q = msg.toLowerCase();
+        let bestMatch = null;
+        let bestScore = 0;
+
+        for (const entry of knowledgeBase) {
+            let score = 0;
+            for (const key of entry.keys) {
+                if (q.includes(key)) {
+                    score += key.length; // Longer match = more specific
+                }
+            }
+            if (score > bestScore) {
+                bestScore = score;
+                bestMatch = entry;
+            }
+        }
+
+        if (bestMatch && bestScore > 0) {
+            return bestMatch.reply;
+        }
+
+        // Fallback: intelligent response with suggestions
+        const suggestions = [
+            '城市雕塑项目怎么合作？',
+            '砚台可以定制吗？',
+            '你们做过哪些大项目？',
+            '赵老师有什么资质？'
+        ];
+        const random = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+        return `感谢您的咨询。关于"${msg.substring(0, 20)}${msg.length > 20 ? '…' : ''}"，我建议您直接致电赵老师获取最准确的答复：<strong>134-5235-5322</strong><br><br>或者试试问我这些问题：<br>· 城市雕塑项目怎么合作？<br>· 砚台可以定制吗？<br>· 你们做过哪些大项目？`;
+    }
+
+    // ===== UPDATE GREETING ON OPEN =====
+    function openChat() {
+        document.getElementById('chatPanel').classList.add('open');
+        document.getElementById('chatInput').focus();
+        // Update greeting with a random variant
+        const firstBotMsg = document.querySelector('#chatMessages .chat-msg.bot .chat-bubble');
+        if (firstBotMsg && !sessionStorage.getItem('chatOpened')) {
+            const greeting = greetingVariants[Math.floor(Math.random() * greetingVariants.length)];
+            firstBotMsg.innerHTML = greeting.replace(/\n/g, '<br>');
+            sessionStorage.setItem('chatOpened', '1');
+        }
+    }
+
+    // ===== CONTACT FORM =====
+    function handleContact(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        const orig = btn.textContent;
+        btn.textContent = '已发送 · Envoyé';
+        btn.style.background = 'var(--gold)';
+        btn.style.color = 'var(--black)';
+        setTimeout(() => {
+            btn.textContent = orig;
+            btn.style.background = 'transparent';
+            btn.style.color = 'var(--gold)';
+        }, 3000);
+        e.target.reset();
+    }
+
+    // ===== SMOOTH SECTION FADE =====
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
