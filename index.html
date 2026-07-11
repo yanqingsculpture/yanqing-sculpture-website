@@ -1343,8 +1343,10 @@
             .back-to-top { bottom: 5.5rem; right: 1rem; }
         }
     </style>
-    <!-- ===== ANALYTICS (Replace IDs with your own) ===== -->
-    <!-- Google Analytics gtag.js -->
+    <!-- ===== ANALYTICS ===== -->
+    <!-- 启用方法：注册后替换下方ID，去掉注释即可 -->
+    <!-- Google Analytics: 注册 https://analytics.google.com → 创建媒体资源 → 获取 G-XXXXXXX ID -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -1352,7 +1354,9 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <!-- Baidu Analytics -->
+    -->
+    <!-- 百度统计: 注册 https://tongji.baidu.com → 添加站点 → 获取 hm.js?XXXX ID -->
+    <!--
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -1363,6 +1367,7 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+    -->
 </head>
 <body>
 
@@ -1608,9 +1613,15 @@
             <div class="timeline-desc">丙烯、油画等，高2.2米 — 2024.9</div>
         </div>
         <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/timeline-baoxing.webp" loading="lazy" alt="宝兴新寨游客接待中心彩绘装饰"></div>
+        </div>
+        <div class="timeline-item fade-in">
             <div class="timeline-title">重庆九龙坡冶金村800米长廊旧改提质</div>
             <div class="timeline-title-en" style="font-family: var(--serif-en); font-size: 0.85rem; color: var(--gray); font-style: italic; margin-bottom: 0.5rem;">Jiulongpo Yejincun 800m Corridor Renovation · Chongqing</div>
             <div class="timeline-desc">老旧社区长廊整体改造与品质提升项目</div>
+        </div>
+        <div class="timeline-item fade-in">
+            <div class="timeline-img"><img src="images/timeline-jiulongpo.webp" loading="lazy" alt="九龙坡冶金村800米长廊"></div>
         </div>
 
         <!-- 2023 -->
@@ -2045,7 +2056,11 @@
             </div>
         </div>
 
-        <form class="contact-form fade-in" id="contactForm" onsubmit="handleContact(event)" action="https://formspree.io/f/your-form-id" method="POST">
+        <form class="contact-form fade-in" id="contactForm" onsubmit="handleContact(event)" action="https://formsubmit.co/1553955932@qq.com" method="POST">
+            <input type="hidden" name="_subject" value="彦青雕塑官网 - 新客户咨询">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_format" value="plain">
             <div class="form-field">
                 <label for="contactName" class="form-label">姓名 / Name</label>
                 <input type="text" id="contactName" name="name" placeholder="请输入您的姓名" required>
@@ -2526,10 +2541,10 @@ MAISON · YANQING · ATELIER · Est. 2016
         const body = encodeURIComponent('姓名/Name: ' + name + '\n电话/Phone: ' + phone + '\n项目类型/Type: ' + type + '\n需求/Message: ' + msg);
         const mailtoLink = 'mailto:1553955932@qq.com?subject=' + subject + '&body=' + body;
         
-        // Try Formspree first, fall back to mailto
+        // Try FormSubmit.co first, fall back to mailto
         const formAction = form.getAttribute('action');
-        if (formAction && formAction.indexOf('your-form-id') === -1) {
-            // Formspree configured - submit via fetch
+        if (formAction && formAction.indexOf('formsubmit.co') !== -1) {
+            // FormSubmit.co - submit via AJAX
             fetch(formAction, {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
@@ -2561,7 +2576,7 @@ MAISON · YANQING · ATELIER · Est. 2016
                 }, 6000);
             });
         } else {
-            // No Formspree configured - use mailto
+            // Fallback - use mailto
             btn.textContent = '已发送 · Sent';
             btn.style.background = 'var(--gold)';
             btn.style.color = 'var(--black)';
