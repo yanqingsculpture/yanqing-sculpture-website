@@ -45,6 +45,20 @@
     </script>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
+    <link rel="preload" as="image" href="images/hero-bg.webp">
+    <link rel="preload" as="image" href="images/work-photo.webp">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="author" content="赵彦青">
+    <meta name="robots" content="index, follow">
+    <!-- VisualArtwork Structured Data -->
+    <script type="application/ld+json">
+    [
+        {"@context":"https://schema.org","@type":"VisualArtwork","name":"观·心","creator":{"@type":"Person","name":"赵彦青"},"artMedium":"鹅卵石 · 船木 · 镀锌钢管","dateCreated":"2021","award":"第十四届中轻万花杯金奖"},
+        {"@context":"https://schema.org","@type":"VisualArtwork","name":"十二生肖砚","creator":{"@type":"Person","name":"赵彦青"},"artMedium":"宝兴外朗石","dateCreated":"2025"},
+        {"@context":"https://schema.org","@type":"VisualArtwork","name":"川藏零公里·自驾大本营","creator":{"@type":"Person","name":"赵彦青"},"artMedium":"不锈钢 · 铝板","dateCreated":"2023","locationCreated":"雅安金鸡关"},
+        {"@context":"https://schema.org","@type":"VisualArtwork","name":"大酉藏书洞文化景区雕塑群","creator":{"@type":"Person","name":"赵彦青"},"artMedium":"黄砂岩 · GRC · 不锈钢","dateCreated":"2025","locationCreated":"湖南辰溪"}
+    ]
+    </script>
     <style>
         :root {
             --black: #0a0a0a;
@@ -506,10 +520,16 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, #e0dbd0, #d5cfc0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            overflow: hidden;
             transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        .portfolio-item-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .portfolio-item:hover .portfolio-item-inner {
@@ -806,6 +826,20 @@
             gap: 1.5rem;
         }
 
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-label {
+            font-family: var(--serif-en);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
         .contact-form input,
         .contact-form textarea {
             background: rgba(255,255,255,0.05);
@@ -873,6 +907,30 @@
             letter-spacing: 0.3em;
             color: rgba(255,255,255,0.3);
             text-transform: uppercase;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .footer-social-link {
+            color: rgba(255,255,255,0.4);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .footer-social-link:hover {
+            color: var(--gold);
+            border-color: var(--gold);
         }
 
         .footer-copy {
@@ -1285,11 +1343,34 @@
             .back-to-top { bottom: 5.5rem; right: 1rem; }
         }
     </style>
+    <!-- ===== ANALYTICS (Replace IDs with your own) ===== -->
+    <!-- Google Analytics gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Baidu Analytics -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?YOUR_BAIDU_ID";
+            hm.async = 1;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 
+<!-- ============ SKIP TO CONTENT (Accessibility) ============ -->
+<a href="#about" class="skip-link" style="position:absolute;top:-100px;left:0;background:var(--black);color:var(--gold);padding:1rem 2rem;text-decoration:none;z-index:9999;transition:top 0.3s;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">跳到主要内容 / Skip to content</a>
+
 <!-- ============ NAVIGATION ============ -->
-<nav id="navbar">
+<nav id="navbar" role="navigation" aria-label="主导航">
     <div class="nav-inner">
         <a href="#" class="nav-brand-wrap">
             <img src="logo.png" alt="彦青雕塑" class="nav-logo">
@@ -1394,24 +1475,21 @@
 
     <div class="portfolio-grid" id="portfolioGrid">
         <!-- Urban Sculpture Projects -->
-        <div class="portfolio-item" data-category="urban" onclick="openLightbox('川藏零公里·自驾大本营', '2023', '雅安金鸡关', 'N°UR-2023-001', 'images/chuanzang-linggongli.webp', '318国道起点地标。《诗与远方的归途》不锈钢雕塑25×15m，三级塔铝板/不锈钢35m。川藏公路零公里自驾大本营标志性雕塑群，2023年落成。')">
-            <div class="portfolio-item-inner" style="background: url('images/chuanzang-linggongli.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/chuanzang-linggongli.webp" loading="lazy" alt="川藏零公里·自驾大本营"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°UR-2023-001</div>
                 <div class="portfolio-overlay-title">川藏零公里·自驾大本营</div>
                 <div class="portfolio-overlay-meta">Chuanzang Ling Gongli · Yaan Jinjiguan</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="urban" onclick="openLightbox('火车拉来的城市', '2017', '六盘水三线文化创意小镇', 'N°UR-2017-001', 'images/sanxian-wamei.webp', '铸铁雕塑高320cm，展现六盘水因三线建设而兴的城市记忆。以火车头为载体，记录一个时代的精神图腾。')">
-            <div class="portfolio-item-inner" style="background: url('images/sanxian-wamei.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/sanxian-wamei.webp" loading="lazy" alt="火车拉来的城市"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°UR-2017-001</div>
                 <div class="portfolio-overlay-title">火车拉来的城市</div>
                 <div class="portfolio-overlay-meta">The City Brought by Trains · Liupanshui</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="urban" onclick="openLightbox('龙行十八式', '2022', '四川茶文化公园', 'N°UR-2022-001', 'images/mengdingshan-beilin.webp', '世界茶文化发源地蒙顶山茶文化公园主题雕塑。融合传统茶道与雕塑语言，展现蒙顶山千年茶文化底蕴。')">
-            <div class="portfolio-item-inner" style="background: url('images/mengdingshan-beilin.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/mengdingshan-beilin.webp" loading="lazy" alt="龙行十八式"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°UR-2022-001</div>
                 <div class="portfolio-overlay-title">龙行十八式</div>
@@ -1420,24 +1498,21 @@
         </div>
 
         <!-- Sculptures -->
-        <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('观·心', '2021', '鹅卵石 · 船木 · 镀锌钢管', 'N°SC-2021-001', 'images/guanxin.webp', '从河边捡回一块鹅卵石，当地人叫它"黄皮黑胆"。切开后发现两种石质共同合体。一点点剥离黄色外皮，看到它原本的样子——不像外表那么圆滑，内心依然有棱有角。获第十四届中国轻工商品博览会"中轻万花杯"金奖。')">
-            <div class="portfolio-item-inner" style="background: url('images/guanxin.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/guanxin.webp" loading="lazy" alt="观·心"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2021-001</div>
                 <div class="portfolio-overlay-title">观·心</div>
                 <div class="portfolio-overlay-meta">Guanxin · Pebble, Boat Wood, Steel Pipe</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('似是而非的艺术', '2013', '宝兴大理石', 'N°SC-2013-001', 'images/shishi-eryu.webp', '老赵毕业创作的早期探索。宝兴大理石原石雕刻，尊重材料的原始肌理，在形似与神似之间寻找平衡。这是老赵创作理念的起点——剥离外皮，呈现内在。')">
-            <div class="portfolio-item-inner" style="background: url('images/shishi-eryu.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/shishi-eryu.webp" loading="lazy" alt="似是而非的艺术"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2013-001</div>
                 <div class="portfolio-overlay-title">似是而非的艺术</div>
                 <div class="portfolio-overlay-meta">Art of Ambiguity · Baoxing Marble</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="sculpture" onclick="openLightbox('对话', '2021', '陨石 · 鹅卵石 · 香樟木 · 镀锌管', 'N°SC-2021-002', 'images/duihua.webp', '天外来客（陨石）与大地之子（鹅卵石）的跨时空对话。配以香樟木的温润与镀锌管的冷峻，四种材料的碰撞本身就是一场关于存在与时间的讨论。')">
-            <div class="portfolio-item-inner" style="background: url('images/duihua.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/duihua.webp" loading="lazy" alt="对话"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2021-002</div>
                 <div class="portfolio-overlay-title">对话</div>
@@ -1446,24 +1521,21 @@
         </div>
 
         <!-- Inkstones -->
-        <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('十二生肖砚', '2025', '宝兴外朗石', 'N°IN-2025-001', 'images/shiershengxiao.webp', '以宝兴外朗石为载体，一套十二方砚台分别对应十二生肖。将传统文化符号融入文房雅器，每方砚台既实用又可独立观赏。穆坪砚制作技艺的代表作品。')">
-            <div class="portfolio-item-inner" style="background: url('images/shiershengxiao.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/shiershengxiao.webp" loading="lazy" alt="十二生肖砚"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-001</div>
                 <div class="portfolio-overlay-title">十二生肖砚</div>
                 <div class="portfolio-overlay-meta">Zodiac Inkstone · Baoxing Wailang Stone</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('窗外', '2025', '宝兴外朗石', 'N°IN-2025-002', 'images/chuangwai-1.webp', '以砚台为窗，以石为框。窗外是宝兴的山水，窗内是匠人的心境。一方砚台，一扇通往自然的窗。')">
-            <div class="portfolio-item-inner" style="background: url('images/chuangwai-1.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/chuangwai-1.webp" loading="lazy" alt="窗外"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-002</div>
                 <div class="portfolio-overlay-title">窗外</div>
                 <div class="portfolio-overlay-meta">Outside the Window · Baoxing Wailang Stone</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="inkstone" onclick="openLightbox('鱼戏莲叶间系列', '2025', '宝兴外朗石', 'N°IN-2025-003', 'images/yuxi-lianye.webp', '取材自汉乐府《江南》"鱼戏莲叶间"。以浮雕技法在砚台上再现江南水乡的诗意画面，鱼与莲的互动中展现东方美学意境。')">
-            <div class="portfolio-item-inner" style="background: url('images/yuxi-lianye.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/yuxi-lianye.webp" loading="lazy" alt="鱼戏莲叶间"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-003</div>
                 <div class="portfolio-overlay-title">鱼戏莲叶间</div>
@@ -1472,24 +1544,21 @@
         </div>
 
         <!-- Ceramics -->
-        <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('呐喊', null, '陶瓷', 'N°CE-001', 'images/nahan.webp', '陶瓷雕塑作品，以夸张的造型语言表达情感张力。老赵早期陶瓷艺术探索的代表作之一。')">
-            <div class="portfolio-item-inner" style="background: url('images/nahan.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/nahan.webp" loading="lazy" alt="呐喊"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°CE-001</div>
                 <div class="portfolio-overlay-title">呐喊</div>
                 <div class="portfolio-overlay-meta">The Scream · Ceramic</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('星空', null, '陶瓷', 'N°CE-002', 'images/xingkong.webp', '以陶瓷为媒介，探索天地与人的关系。釉色的流动与窑变的偶然性让每件作品都独一无二。')">
-            <div class="portfolio-item-inner" style="background: url('images/xingkong.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/xingkong.webp" loading="lazy" alt="星空"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°CE-002</div>
                 <div class="portfolio-overlay-title">星空</div>
                 <div class="portfolio-overlay-meta">Starry Sky · Ceramic</div>
             </div>
         </div>
-        <div class="portfolio-item" data-category="ceramic" onclick="openLightbox('国歌', null, '陶瓷', 'N°CE-003', 'images/guoge.webp', '陶瓷雕塑作品。以具象与抽象的结合，探索声音与造型之间的关系。')">
-            <div class="portfolio-item-inner" style="background: url('images/guoge.webp') center/cover no-repeat;"></div>
+        <div class="portfolio-item-inner"><img src="images/guoge.webp" loading="lazy" alt="国歌"></div>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°CE-003</div>
                 <div class="portfolio-overlay-title">国歌</div>
@@ -1976,14 +2045,26 @@
             </div>
         </div>
 
-        <form class="contact-form fade-in" id="contactForm" onsubmit="handleContact(event)">
-            <input type="text" id="contactName" placeholder="您的姓名 / Name" required>
-            <input type="text" id="contactPhone" placeholder="联系电话 / Phone" required>
-            <input type="text" id="contactType" placeholder="项目类型 / Project type（城市雕塑 · 石雕 · 砚台 · 其他）">
-            <textarea id="contactMsg" placeholder="请简述您的项目需求 / Describe your project" required></textarea>
+        <form class="contact-form fade-in" id="contactForm" onsubmit="handleContact(event)" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-field">
+                <label for="contactName" class="form-label">姓名 / Name</label>
+                <input type="text" id="contactName" name="name" placeholder="请输入您的姓名" required>
+            </div>
+            <div class="form-field">
+                <label for="contactPhone" class="form-label">电话 / Phone</label>
+                <input type="tel" id="contactPhone" name="phone" placeholder="请输入联系电话" required>
+            </div>
+            <div class="form-field">
+                <label for="contactType" class="form-label">项目类型 / Project Type</label>
+                <input type="text" id="contactType" name="project_type" placeholder="城市雕塑 · 石雕 · 砚台 · 其他">
+            </div>
+            <div class="form-field">
+                <label for="contactMsg" class="form-label">需求描述 / Message</label>
+                <textarea id="contactMsg" name="message" placeholder="请简述您的项目需求" required></textarea>
+            </div>
             <button type="submit" id="contactBtn">Send · 发送</button>
             <div id="contactSuccess" style="display:none;padding:1.5rem;border:1px solid var(--gold);text-align:center;margin-top:1rem;">
-                <p style="font-size:1.1rem;color:var(--gold);margin-bottom:0.5rem;">Thank you! 感谢您的咨询</p>
+                <p style="font-size:1.1rem;color:var(--gold);margin-bottom:0.5rem;">✓ Thank you! 感谢您的咨询</p>
                 <p style="font-size:0.85rem;color:var(--gray);">我们将尽快与您联系。We will contact you shortly.</p>
             </div>
         </form>
@@ -1994,6 +2075,22 @@
 <footer>
     <div class="footer-brand">MAISON <span>·</span> YANQING <span>·</span> ATELIER</div>
     <div class="footer-tagline">Est. MMXVI · Chongqing &amp; Baoxing</div>
+    
+    <div class="footer-social">
+        <a href="#contact" class="footer-social-link" title="微信咨询" aria-label="微信">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8.5 4C4.91 4 2 6.46 2 9.5c0 1.74.99 3.29 2.53 4.29L4 15l2.05-1.05c.78.19 1.6.3 2.45.3.2 0 .39-.01.58-.02-.12-.38-.19-.79-.19-1.21 0-2.86 2.91-5.18 6.5-5.18.2 0 .39.01.58.03C15.6 5.5 12.35 4 8.5 4zM6.5 8c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm4 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm4.89 2.06C12.29 10.06 10 11.89 10 14.5c0 2.61 2.29 4.44 5.39 4.44.63 0 1.25-.09 1.84-.26L19 20l-.47-1.5c1.26-.82 2.07-2.06 2.07-3.5 0-2.61-2.29-4.44-5.21-4.44zM14 13c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zm3 0c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75z"/></svg>
+        </a>
+        <a href="javascript:void(0)" onclick="shareWebsite('wechat')" class="footer-social-link" title="分享到微信" aria-label="分享到微信">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.12c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        </a>
+        <a href="javascript:void(0)" onclick="shareWebsite('weibo')" class="footer-social-link" title="分享到微博" aria-label="分享到微博">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.84 15.56c-2.67.26-4.98-.94-5.16-2.69-.18-1.74 1.84-3.39 4.51-3.66 2.67-.26 4.98.94 5.16 2.69.18 1.75-1.84 3.4-4.51 3.66zm8.36-7.79c-.18-.06-.31-.1-.21-.36.21-.54.23-1.01.01-1.34-.42-.66-1.58-.63-2.91-.01 0 0-.42.18-.31-.15.2-.66.17-1.21-.15-1.53-.74-.74-2.71.02-4.4 1.7-1.26 1.25-1.99 2.58-1.99 3.78 0 2.23 2.86 3.59 5.65 3.59 3.66 0 6.1-2.12 6.1-3.81 0-1.02-.86-1.6-1.79-1.87z"/></svg>
+        </a>
+        <a href="javascript:void(0)" onclick="copyLink()" class="footer-social-link" title="复制链接" aria-label="复制链接">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+        </a>
+    </div>
+
     <div class="footer-copy">
         &copy; 2016–<span id="currentYear">2026</span> 重庆彦青雕塑艺术有限公司 · 宝兴彦青雕塑艺术有限公司<br>
         国家一级工艺美术品设计师 · 四川省工艺美术大师 · 穆坪砚非遗传承人
@@ -2016,7 +2113,7 @@
 </div>
 
 <!-- ============ CHAT WIDGET ============ -->
-<div class="chat-widget">
+<div class="chat-widget" role="region" aria-label="AI在线咨询">
     <div class="chat-panel" id="chatPanel">
         <div class="chat-header">
             <div class="chat-header-title">彦青雕塑 · AI 顾问</div>
@@ -2040,7 +2137,7 @@
             <button onclick="sendMessage()">发送</button>
         </div>
     </div>
-    <button class="chat-toggle" onclick="toggleChat()" aria-label="打开对话">
+    <button class="chat-toggle" onclick="toggleChat()" aria-label="打开在线对话" aria-expanded="false" id="chatToggleBtn">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     </button>
 </div>
@@ -2107,10 +2204,13 @@
     // ===== CHAT WIDGET =====
     function toggleChat() {
         const panel = document.getElementById('chatPanel');
+        const toggleBtn = document.getElementById('chatToggleBtn');
         if (panel.classList.contains('open')) {
             panel.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
         } else {
             openChat();
+            toggleBtn.setAttribute('aria-expanded', 'true');
         }
     }
 
@@ -2412,37 +2512,107 @@ MAISON · YANQING · ATELIER · Est. 2016
         const type = document.getElementById('contactType').value.trim();
         const msg = document.getElementById('contactMsg').value.trim();
         const btn = document.getElementById('contactBtn');
+        const form = document.getElementById('contactForm');
         
         if (!name || !phone || !msg) return;
         
-        // Build mailto fallback + show success
+        // Show success message
+        const orig = btn.textContent;
+        btn.textContent = '发送中... Sending';
+        btn.disabled = true;
+        
+        // Build mailto fallback
         const subject = encodeURIComponent('[彦青雕塑] 项目咨询 - ' + name);
         const body = encodeURIComponent('姓名/Name: ' + name + '\n电话/Phone: ' + phone + '\n项目类型/Type: ' + type + '\n需求/Message: ' + msg);
         const mailtoLink = 'mailto:1553955932@qq.com?subject=' + subject + '&body=' + body;
         
-        // Show success message
-        const orig = btn.textContent;
-        btn.textContent = '已发送 · Sent';
-        btn.style.background = 'var(--gold)';
-        btn.style.color = 'var(--black)';
-        document.getElementById('contactSuccess').style.display = 'block';
-        document.getElementById('contactForm').reset();
-        
-        // Try to open email client
-        setTimeout(function() {
-            window.location.href = mailtoLink;
-        }, 500);
-        
-        setTimeout(function() {
-            btn.textContent = orig;
-            btn.style.background = 'transparent';
-            btn.style.color = 'var(--gold)';
-            document.getElementById('contactSuccess').style.display = 'none';
-        }, 6000);
+        // Try Formspree first, fall back to mailto
+        const formAction = form.getAttribute('action');
+        if (formAction && formAction.indexOf('your-form-id') === -1) {
+            // Formspree configured - submit via fetch
+            fetch(formAction, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+            })
+            .then(response => {
+                btn.textContent = '已发送 · Sent';
+                btn.style.background = 'var(--gold)';
+                btn.style.color = 'var(--black)';
+                document.getElementById('contactSuccess').style.display = 'block';
+                form.reset();
+            })
+            .catch(error => {
+                // Fallback to mailto
+                window.location.href = mailtoLink;
+                btn.textContent = '已发送 · Sent';
+                btn.style.background = 'var(--gold)';
+                btn.style.color = 'var(--black)';
+                document.getElementById('contactSuccess').style.display = 'block';
+                form.reset();
+            })
+            .finally(() => {
+                setTimeout(function() {
+                    btn.textContent = orig;
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'var(--gold)';
+                    btn.disabled = false;
+                    document.getElementById('contactSuccess').style.display = 'none';
+                }, 6000);
+            });
+        } else {
+            // No Formspree configured - use mailto
+            btn.textContent = '已发送 · Sent';
+            btn.style.background = 'var(--gold)';
+            btn.style.color = 'var(--black)';
+            document.getElementById('contactSuccess').style.display = 'block';
+            form.reset();
+            
+            setTimeout(function() {
+                window.location.href = mailtoLink;
+            }, 500);
+            
+            setTimeout(function() {
+                btn.textContent = orig;
+                btn.style.background = 'transparent';
+                btn.style.color = 'var(--gold)';
+                btn.disabled = false;
+                document.getElementById('contactSuccess').style.display = 'none';
+            }, 6000);
+        }
     }
 
     // ===== DYNAMIC YEAR =====
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // ===== SHARE FUNCTIONS =====
+    function shareWebsite(platform) {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent('彦青雕塑艺术 — 城市雕塑·石雕·砚台');
+        if (platform === 'weibo') {
+            window.open('https://service.weibo.com/share/share.php?url=' + url + '&title=' + title, '_blank');
+        } else if (platform === 'wechat') {
+            // Copy link for WeChat sharing
+            copyLink();
+        }
+    }
+
+    function copyLink() {
+        const url = window.location.href;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(function() {
+                alert('链接已复制到剪贴板！\nLink copied to clipboard!');
+            });
+        } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = url;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('链接已复制到剪贴板！\nLink copied to clipboard!');
+        }
+    }
 
     // ===== BACK TO TOP =====
     const backBtn = document.getElementById('backToTop');

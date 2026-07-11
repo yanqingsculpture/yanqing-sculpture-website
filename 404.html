@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 页面未找到 | 彦青雕塑</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #f8f5f0;
+            --gold: #B79C5A;
+            --gray: #8a8a8a;
+            --serif-cn: 'STSong', 'SimSun', '宋体', 'Noto Serif SC', serif;
+            --serif-en: 'Georgia', 'Times New Roman', 'Palatino', serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--serif-cn);
+            background: var(--white);
+            color: var(--black);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .error-num {
+            font-family: var(--serif-en);
+            font-size: clamp(6rem, 20vw, 10rem);
+            color: var(--gold);
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: 0.05em;
+        }
+        .error-tag {
+            font-family: var(--serif-en);
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            color: var(--gray);
+            text-transform: uppercase;
+            margin: 2rem 0 1rem;
+        }
+        .error-title {
+            font-family: var(--serif-cn);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        .error-desc {
+            font-family: var(--serif-cn);
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 2;
+            margin-bottom: 3rem;
+        }
+        .error-desc span {
+            font-family: var(--serif-en);
+            font-style: italic;
+            font-size: 0.85rem;
+        }
+        .back-btn {
+            display: inline-block;
+            font-family: var(--serif-en);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            padding: 1rem 3rem;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+        .footer-brand {
+            margin-top: 4rem;
+            font-family: var(--serif-en);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+        }
+        .footer-brand span { color: var(--gold); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-num">404</div>
+        <div class="error-tag">N° — Not Found</div>
+        <h1 class="error-title">页面未找到</h1>
+        <p class="error-desc">
+            您访问的页面不存在或已被移动。<br>
+            <span>The page you are looking for does not exist or has been moved.</span>
+        </p>
+        <a href="/" class="back-btn">返回首页 · Back to Home</a>
+        <div class="footer-brand">MAISON <span>·</span> YANQING <span>·</span> ATELIER</div>
+    </div>
+</body>
+</html>
