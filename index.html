@@ -2520,29 +2520,58 @@ MAISON · YANQING · ATELIER · Est. 2016
     }
 
     // ===== CONTACT FORM =====
+    // PushPlus WeChat Push Token
+    // Register at: https://www.pushplus.plus/ (scan WeChat QR to login, copy your token)
+    // After getting token, replace the empty string below
+    const PUSHPLUS_TOKEN = '';
+
+    function sendWeChatPush(name, phone, type, msg) {
+        if (!PUSHPLUS_TOKEN) return; // Skip if not configured
+        var content = '--- 彦青雕塑官网新咨询 ---\n' +
+            '姓名: ' + name + '\n' +
+            '电话: ' + phone + '\n' +
+            '项目类型: ' + (type || '未填写') + '\n' +
+            '需求描述: ' + msg + '\n' +
+            '提交时间: ' + new Date().toLocaleString('zh-CN') + '\n' +
+            '---\n来源: https://cqyqds.cn';
+        fetch('https://www.pushplus.plus/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                token: PUSHPLUS_TOKEN,
+                title: '[彦青雕塑] 新客户咨询 - ' + name,
+                content: content,
+                template: 'txt'
+            })
+        }).catch(function() {});
+    }
+
     function handleContact(e) {
         e.preventDefault();
-        const name = document.getElementById('contactName').value.trim();
-        const phone = document.getElementById('contactPhone').value.trim();
-        const type = document.getElementById('contactType').value.trim();
-        const msg = document.getElementById('contactMsg').value.trim();
-        const btn = document.getElementById('contactBtn');
-        const form = document.getElementById('contactForm');
+        var name = document.getElementById('contactName').value.trim();
+        var phone = document.getElementById('contactPhone').value.trim();
+        var type = document.getElementById('contactType').value.trim();
+        var msg = document.getElementById('contactMsg').value.trim();
+        var btn = document.getElementById('contactBtn');
+        var form = document.getElementById('contactForm');
         
         if (!name || !phone || !msg) return;
         
         // Show success message
-        const orig = btn.textContent;
+        var orig = btn.textContent;
         btn.textContent = '发送中... Sending';
         btn.disabled = true;
         
         // Build mailto fallback
-        const subject = encodeURIComponent('[彦青雕塑] 项目咨询 - ' + name);
-        const body = encodeURIComponent('姓名/Name: ' + name + '\n电话/Phone: ' + phone + '\n项目类型/Type: ' + type + '\n需求/Message: ' + msg);
-        const mailtoLink = 'mailto:1553955932@qq.com?subject=' + subject + '&body=' + body;
+        var subject = encodeURIComponent('[彦青雕塑] 项目咨询 - ' + name);
+        var body = encodeURIComponent('姓名/Name: ' + name + '\n电话/Phone: ' + phone + '\n项目类型/Type: ' + type + '\n需求/Message: ' + msg);
+        var mailtoLink = 'mailto:1553955932@qq.com?subject=' + subject + '&body=' + body;
+        
+        // Send WeChat push notification (fire-and-forget, won't block form)
+        sendWeChatPush(name, phone, type, msg);
         
         // Try FormSubmit.co first, fall back to mailto
-        const formAction = form.getAttribute('action');
+        var formAction = form.getAttribute('action');
         if (formAction && formAction.indexOf('formsubmit.co') !== -1) {
             // FormSubmit.co - submit via AJAX
             fetch(formAction, {
@@ -2550,14 +2579,14 @@ MAISON · YANQING · ATELIER · Est. 2016
                 headers: { 'Accept': 'application/json' },
                 body: new FormData(form)
             })
-            .then(response => {
+            .then(function(response) {
                 btn.textContent = '已发送 · Sent';
                 btn.style.background = 'var(--gold)';
                 btn.style.color = 'var(--black)';
                 document.getElementById('contactSuccess').style.display = 'block';
                 form.reset();
             })
-            .catch(error => {
+            .catch(function(error) {
                 // Fallback to mailto
                 window.location.href = mailtoLink;
                 btn.textContent = '已发送 · Sent';
@@ -2566,7 +2595,7 @@ MAISON · YANQING · ATELIER · Est. 2016
                 document.getElementById('contactSuccess').style.display = 'block';
                 form.reset();
             })
-            .finally(() => {
+            .finally(function() {
                 setTimeout(function() {
                     btn.textContent = orig;
                     btn.style.background = 'transparent';
