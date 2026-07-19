@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集 · 赵彦青 Zhao Yanqing · 城市雕塑 · 石雕 · 砚台</title>
+<meta name="description" content="赵彦青代表作品集：城市雕塑《诗与远方的归途》、石雕《观·心》《九螭穿环》、穆坪砚《十二生肖砚》《窗外》、陶瓷艺术等。不锈钢、铸铜、石材、跨媒介创作。">
+<meta name="keywords" content="赵彦青作品,城市雕塑,石雕,穆坪砚,砚台,诗与远方的归途,观·心,彦青雕塑">
+<meta property="og:title" content="作品集 · 赵彦青 Zhao Yanqing">
+<meta property="og:description" content="从城市地标到掌心砚台——赵彦青雕塑作品全览。">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --gold:#B79C5A;--gold-soft:#C9B377;--ink:#1A1A1A;
+    --ink-soft:#3A3A3A;--ink-light:#666;--paper:#FFFFFF;
+    --paper-warm:#FAF8F3;--line:#E4DFD3;--line-light:#F0EBE0;
+    --sans:"Calibri","Helvetica Neue","Arial","Microsoft YaHei",sans-serif;
+    --serif:"STSong","SimSun","宋体","Noto Serif SC",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);background:var(--paper);color:var(--ink);
+    line-height:1.8;-webkit-font-smoothing:antialiased;
+  }
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* 导航 */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-light);transition:all 0.3s;}
+  nav .inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;}
+  nav .logo{font-family:var(--sans);font-size:12px;letter-spacing:0.36em;color:var(--gold);text-decoration:none;white-space:nowrap;}
+  nav .links{display:flex;gap:32px;list-style:none;}
+  nav .links a{font-family:var(--serif);font-size:14px;color:var(--ink-soft);text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;}
+  nav .links a:hover,nav .links a.active{color:var(--gold);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--ink);font-size:22px;}
+
+  /* 筛选 */
+  .filter-bar{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:64px;}
+  .filter-btn{font-family:var(--serif);font-size:14px;color:var(--ink-soft);background:none;border:none;border-bottom:1px solid transparent;padding:8px 0;cursor:pointer;letter-spacing:0.08em;transition:all 0.3s;}
+  .filter-btn:hover,.filter-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+  /* 页面结构 */
+  .page-hero{padding:140px 40px 60px;text-align:center;background:var(--paper-warm);border-bottom:1px solid var(--line);}
+  .page-hero .brand-mark{font-family:var(--sans);font-size:14px;letter-spacing:0.48em;color:var(--gold);margin-bottom:32px;font-weight:300;}
+  .page-hero h1{font-family:var(--serif);font-size:42px;font-weight:400;letter-spacing:0.1em;color:var(--ink);}
+  .page-hero .sub{font-family:var(--sans);font-size:15px;letter-spacing:0.2em;color:var(--ink-soft);margin-top:12px;text-transform:uppercase;}
+  .page-hero .gold-rule{width:60px;height:1px;background:var(--gold);margin:40px auto 0;}
+
+  section{padding:80px 40px;}
+  section.alt{background:var(--paper-warm);}
+  .sec-inner{max-width:1100px;margin:0 auto;}
+
+  /* 分类标题 */
+  .cat-head{text-align:center;margin-bottom:48px;}
+  .cat-head .cat-num{font-family:var(--sans);font-size:11px;letter-spacing:0.4em;color:var(--gold);margin-bottom:12px;}
+  .cat-head h2{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:0.08em;color:var(--ink);margin-bottom:6px;}
+  .cat-head .en{font-family:var(--sans);font-size:13px;letter-spacing:0.16em;color:#999;text-transform:uppercase;}
+
+  /* 作品卡片网格 */
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .work-card{background:var(--paper);border:1px solid var(--line);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);overflow:hidden;}
+  .work-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+  .work-card .img-placeholder{aspect-ratio:4/3;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .work-card .img-placeholder .pht{font-family:var(--serif);font-size:24px;color:var(--line);letter-spacing:0.1em;}
+  .work-card .img-placeholder .tag{position:absolute;top:12px;left:12px;font-family:var(--sans);font-size:10px;letter-spacing:0.2em;color:var(--gold);background:var(--paper);padding:4px 10px;border:1px solid var(--gold);text-transform:uppercase;}
+  .work-card .info{padding:20px;}
+  .work-card .info h3{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--ink);margin-bottom:4px;}
+  .work-card .info .en{font-family:var(--sans);font-size:13px;color:var(--ink-light);font-style:italic;margin-bottom:10px;}
+  .work-card .info .meta{font-family:var(--sans);font-size:11px;color:#999;letter-spacing:0.06em;}
+
+  /* 宽卡片（城市雕塑） */
+  .work-card.wide{grid-column:span 2;}
+  .work-card.wide .img-placeholder{aspect-ratio:2/1;}
+
+  /* 页脚 */
+  footer{text-align:center;padding:80px 40px 60px;background:var(--paper-warm);border-top:1px solid var(--line);}
+  footer .cert-mark{font-family:var(--sans);font-size:13px;letter-spacing:0.42em;color:var(--gold);margin-bottom:10px;}
+  footer .cert-no{font-family:var(--sans);font-size:11px;letter-spacing:0.32em;color:var(--ink-light);margin-bottom:36px;}
+  footer .info-block{font-family:var(--serif);font-size:14px;color:var(--ink-soft);line-height:2.2;}
+  footer .info-block.en{font-family:var(--sans);font-size:13px;color:var(--ink-light);}
+  footer .contact{font-family:var(--sans);font-size:13px;color:var(--ink-light);letter-spacing:0.06em;margin-top:20px;}
+  footer .contact a{color:var(--gold);text-decoration:none;}
+  footer .copyright{font-family:var(--sans);font-size:11px;letter-spacing:0.2em;color:#bbb;margin-top:44px;text-transform:uppercase;}
+
+  .back-top{position:fixed;bottom:40px;right:40px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:var(--paper);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--gold);transition:all 0.3s;opacity:0;pointer-events:none;transform:translateY(12px);}
+  .back-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .back-top:hover{background:var(--gold);color:var(--paper);}
+
+  @media(max-width:1024px){.works-grid{grid-template-columns:repeat(2,1fr);}.work-card.wide{grid-column:span 2;}}
+  @media(max-width:768px){
+    nav .inner{padding:0 24px;}
+    nav .links{display:none;}
+    nav .links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);padding:20px 24px;gap:12px;border-bottom:1px solid var(--line);}
+    .menu-toggle{display:block;}
+    .page-hero{padding:110px 24px 48px;}
+    .page-hero h1{font-size:30px;}
+    section{padding:56px 24px;}
+    .works-grid{grid-template-columns:1fr;gap:20px;}
+    .work-card.wide{grid-column:span 1;}.work-card.wide .img-placeholder{aspect-ratio:4/3;}
+    .cat-head h2{font-size:22px;}
+    .filter-bar{gap:16px;margin-bottom:40px;}
+    .filter-btn{font-size:13px;}
+  }
+  @media(max-width:480px){.page-hero{padding:100px 20px 40px;}.page-hero h1{font-size:26px;}section{padding:40px 20px;}footer{padding:60px 20px 48px;}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="inner">
+    <a href="index.html" class="logo">YANQING SCULPTURE</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">&#9776;</button>
+    <ul class="links" id="navLinks">
+      <li><a href="works.html" class="active">作品 Works</a></li>
+      <li><a href="about.html">关于 About</a></li>
+      <li><a href="contact.html">联系 Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero" id="top">
+  <div class="brand-mark">MAISON · YANQING · ATELIER · EST. MMXVI</div>
+  <h1>作品集</h1>
+  <p class="sub">Selected Works</p>
+  <div class="gold-rule"></div>
+  <div class="filter-bar reveal" style="margin-top:40px;">
+    <button class="filter-btn active" data-filter="all">全部 All</button>
+    <button class="filter-btn" data-filter="public">城市雕塑 Public</button>
+    <button class="filter-btn" data-filter="stone">石雕 Stone</button>
+    <button class="filter-btn" data-filter="inkstone">砚台 Inkstone</button>
+    <button class="filter-btn" data-filter="ceramic">陶瓷 Ceramic</button>
+  </div>
+</header>
+
+<!-- 城市雕塑 -->
+<section id="public" class="alt">
+  <div class="sec-inner">
+    <div class="cat-head reveal">
+      <div class="cat-num">CATEGORY I</div>
+      <h2>城市雕塑</h2>
+      <p class="en">Public Sculpture</p>
+    </div>
+    <div class="works-grid">
+
+      <div class="work-card wide reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">诗与远方的归途</span><span class="tag">Stainless Steel</span></div>
+        <div class="info">
+          <h3>诗与远方的归途</h3>
+          <p class="en">The Journey Home</p>
+          <p class="meta">2023 · 不锈钢锻造 · 25m × 15m · 四川雅安川藏零公里自驾大本营</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">火车拉来的城市</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>火车拉来的城市</h3>
+          <p class="en">The City the Trains Brought</p>
+          <p class="meta">2017 · 贵州六盘水三线文化创意小镇</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">军民鱼水情</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>军民鱼水情</h3>
+          <p class="en">Soldiers and Civilians, Fish and Water</p>
+          <p class="meta">2016 · 贵州印江</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">五十六个民族</span><span class="tag">铸铜</span></div>
+        <div class="info">
+          <h3>五十六个民族铸铜雕塑</h3>
+          <p class="en">56 Ethnic Groups Bronze Series</p>
+          <p class="meta">2018 · 贵州六盘水水城河</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">龙行十八式</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>龙行十八式雕塑</h3>
+          <p class="en">Dragon Style Tea Ceremony</p>
+          <p class="meta">2022 · 四川雅安茶文化公园</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">蒙顶山茶诗碑林</span><span class="tag">Stone</span></div>
+        <div class="info">
+          <h3>蒙顶山茶诗碑林</h3>
+          <p class="en">Mengding Tea Poetry Forest</p>
+          <p class="meta">2022 · 四川雅安蒙顶山</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">广阳岛水景</span><span class="tag">Stone</span></div>
+        <div class="info">
+          <h3>广阳岛水景雕塑</h3>
+          <p class="en">Guangyang Island Waterscape</p>
+          <p class="meta">2021 · 重庆巴南区广阳岛</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">数字雕塑景观墙</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>数字雕塑景观墙</h3>
+          <p class="en">Digital Sculpture Landscape Wall</p>
+          <p class="meta">2021 · 重庆数据谷</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">牛背山景观</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>牛背山风景区景观雕塑</h3>
+          <p class="en">Niubei Mountain Scenic Sculpture</p>
+          <p class="meta">2021 · 雅安荥经牛背山</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">中国地质大学雕塑</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>中国地质大学建校70周年雕塑</h3>
+          <p class="en">CUG 70th Anniversary Sculpture</p>
+          <p class="meta">2022 · 湖北武汉</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">汉白玉名人肖像</span><span class="tag">Marble</span></div>
+        <div class="info">
+          <h3>西方汉白玉名人肖像</h3>
+          <p class="en">Western Portraits in White Marble</p>
+          <p class="meta">2019 · 重庆大学建校90周年</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="public">
+        <div class="img-placeholder"><span class="pht">三世佛二弟子</span><span class="tag">Stone</span></div>
+        <div class="info">
+          <h3>三世佛二弟子</h3>
+          <p class="en">Three Buddhas and Two Disciples</p>
+          <p class="meta">2019 · 雅安宝兴大悲寺</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 石雕 / 跨媒介 -->
+<section id="stone">
+  <div class="sec-inner">
+    <div class="cat-head reveal">
+      <div class="cat-num">CATEGORY II</div>
+      <h2>石雕 · 跨媒介</h2>
+      <p class="en">Stone Sculpture &amp; Mixed Media</p>
+    </div>
+    <div class="works-grid">
+
+      <div class="work-card wide reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">观·心</span><span class="tag">Gold Award</span></div>
+        <div class="info">
+          <h3>观·心</h3>
+          <p class="en">Observation · Heart</p>
+          <p class="meta">2021 · 鹅卵石、船木、镀锌钢管 · 中轻万花杯金奖</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">九螭穿环</span><span class="tag">Silver Award</span></div>
+        <div class="info">
+          <h3>九螭穿环</h3>
+          <p class="en">Nine Dragons Through the Ring</p>
+          <p class="meta">2023 · 石雕 · 中轻万花杯银奖</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">对话</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>对话</h3>
+          <p class="en">Dialogue</p>
+          <p class="meta">2021 · 陨石、鹅卵石、香樟木、镀锌管</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">山涧</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>山涧</h3>
+          <p class="en">Mountain Stream</p>
+          <p class="meta">2021 · 宝兴大理石、锈铁</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">似是而非的艺术</span><span class="tag">Marble</span></div>
+        <div class="info">
+          <h3>似是而非的艺术</h3>
+          <p class="en">Art That Is Not Quite Art</p>
+          <p class="meta">2013 · 宝兴大理石</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">凳子</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>凳子</h3>
+          <p class="en">Stool</p>
+          <p class="meta">2021 · 工字钢、宝兴大理石</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">酒店屏风</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>为酒店设计屏风</h3>
+          <p class="en">Hotel Screen Design</p>
+          <p class="meta">2022 · 宝兴大理石、不锈钢、陶瓷、黑花岗</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="stone">
+        <div class="img-placeholder"><span class="pht">宝兴的山与水</span><span class="tag">Mixed</span></div>
+        <div class="info">
+          <h3>宝兴的山与水</h3>
+          <p class="en">Mountains and Waters of Baoxing</p>
+          <p class="meta">2022 · 宝兴大理石、树脂、不锈钢</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 砚台 -->
+<section id="inkstone" class="alt">
+  <div class="sec-inner">
+    <div class="cat-head reveal">
+      <div class="cat-num">CATEGORY III</div>
+      <h2>穆坪砚</h2>
+      <p class="en">Muping Inkstone · Intangible Cultural Heritage</p>
+    </div>
+    <div class="works-grid">
+
+      <div class="work-card wide reveal" data-cat="inkstone">
+        <div class="img-placeholder"><span class="pht">十二生肖砚</span><span class="tag">2025</span></div>
+        <div class="info">
+          <h3>十二生肖砚</h3>
+          <p class="en">Zodiac Inkstone Series</p>
+          <p class="meta">2025 · 宝兴外朗石 · 穆坪砚制作技艺（市级非遗）</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="inkstone">
+        <div class="img-placeholder"><span class="pht">窗外</span><span class="tag">2025</span></div>
+        <div class="info">
+          <h3>窗外</h3>
+          <p class="en">Beyond the Window</p>
+          <p class="meta">2025 · 宝兴外朗石</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="inkstone">
+        <div class="img-placeholder"><span class="pht">鱼戏莲叶间</span><span class="tag">2025</span></div>
+        <div class="info">
+          <h3>鱼戏莲叶间 系列</h3>
+          <p class="en">Fish Among Lotus Leaves</p>
+          <p class="meta">2025 · 宝兴外朗石</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="inkstone">
+        <div class="img-placeholder"><span class="pht">芭蕉砚之一</span><span class="tag">2025</span></div>
+        <div class="info">
+          <h3>芭蕉砚 之一</h3>
+          <p class="en">Banana Leaf Inkstone I</p>
+          <p class="meta">2025 · 宝兴外朗石</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="inkstone">
+        <div class="img-placeholder"><span class="pht">芭蕉砚之二</span><span class="tag">2025</span></div>
+        <div class="info">
+          <h3>芭蕉砚 之二</h3>
+          <p class="en">Banana Leaf Inkstone II</p>
+          <p class="meta">2025 · 宝兴外朗石</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal" data-cat="inkstone">
+        <div class="img-placeholder"><span class="pht">芭蕉砚之三</span><span class="tag">2025</span></div>
+        <div class="info">
+          <h3>芭蕉砚 之三</h3>
+          <p class="en">Banana Leaf Inkstone III</p>
+          <p class="meta">2025 · 宝兴外朗石</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 陶瓷 -->
+<section id="ceramic">
+  <div class="sec-inner">
+    <div class="cat-head reveal">
+      <div class="cat-num">CATEGORY IV</div>
+      <h2>陶瓷艺术</h2>
+      <p class="en">Ceramic Art</p>
+    </div>
+    <div class="works-grid">
+
+      <div class="work-card reveal" data-cat="ceramic">
+        <div class="img-placeholder"><span class="pht">呐喊</span><span class="tag">Ceramic</span></div>
+        <div class="info"><h3>呐喊</h3><p class="en">The Scream</p></div>
+      </div>
+      <div class="work-card reveal" data-cat="ceramic">
+        <div class="img-placeholder"><span class="pht">梦</span><span class="tag">Ceramic</span></div>
+        <div class="info"><h3>梦</h3><p class="en">Dream</p></div>
+      </div>
+      <div class="work-card reveal" data-cat="ceramic">
+        <div class="img-placeholder"><span class="pht">星空</span><span class="tag">Ceramic</span></div>
+        <div class="info"><h3>星空</h3><p class="en">Starry Night</p></div>
+      </div>
+      <div class="work-card reveal" data-cat="ceramic">
+        <div class="img-placeholder"><span class="pht">中秋</span><span class="tag">Ceramic</span></div>
+        <div class="info"><h3>中秋</h3><p class="en">Mid-Autumn</p></div>
+      </div>
+      <div class="work-card reveal" data-cat="ceramic">
+        <div class="img-placeholder"><span class="pht">童谣</span><span class="tag">Ceramic</span></div>
+        <div class="info"><h3>童谣</h3><p class="en">Nursery Rhyme</p></div>
+      </div>
+      <div class="work-card reveal" data-cat="ceramic">
+        <div class="img-placeholder"><span class="pht">国歌</span><span class="tag">Ceramic</span></div>
+        <div class="info"><h3>国歌</h3><p class="en">National Anthem</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="cert-mark">MAISON · YANQING · ATELIER · EST. MMXVI</div>
+  <div class="cert-no">N° — MMXVI</div>
+  <p class="info-block">赵彦青 · 雕塑艺术家 · 四川省工艺美术大师 · 穆坪砚非遗传承人</p>
+  <p class="info-block en">Zhao Yanqing · Sculptor · Master of Arts and Crafts · Heritage Bearer</p>
+  <div class="contact">
+    <span>Tel · <a href="tel:13452355322">13452355322</a></span>
+    <span style="margin:0 16px;">|</span>
+    <span>Email · <a href="mailto:1553955932@qq.com">1553955932@qq.com</a></span>
+    <span style="margin:0 16px;">|</span>
+    <span>Web · <a href="https://cqyqds.cn">cqyqds.cn</a></span>
+  </div>
+  <div class="copyright">&copy; MMXVI–MMXXVI &nbsp;Yanqing Sculpture Art. All Rights Reserved.</div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+<script>
+(function(){
+  var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+window.addEventListener('scroll',function(){document.getElementById('nav').style.boxShadow=window.scrollY>10?'0 1px 12px rgba(0,0,0,0.04)':'none';});
+window.addEventListener('scroll',function(){var b=document.getElementById('backTop');if(window.scrollY>600)b.classList.add('show');else b.classList.remove('show');});
+document.getElementById('menuToggle').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('open');});
+
+// 分类筛选
+document.querySelectorAll('.filter-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+    this.classList.add('active');
+    var filter=this.dataset.filter;
+    document.querySelectorAll('.work-card').forEach(function(card){
+      if(filter==='all'||card.dataset.cat===filter){card.style.display='';card.classList.add('reveal');}
+      else{card.style.display='none';}
+    });
+    // 重新触发可见卡片动画
+    setTimeout(function(){
+      document.querySelectorAll('.work-card[style=""]').forEach(function(c, i){
+        setTimeout(function(){c.classList.remove('reveal');c.classList.add('visible');},i*50);
+      });
+    },100);
+  });
+});
+</script>
+
+</body>
+</html>
