@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赵彦青 Zhao Yanqing · 雕塑艺术家 · 非遗传承人 · 四川省工艺美术大师</title>
+<meta name="description" content="赵彦青，雕塑艺术家，四川省工艺美术大师，穆坪砚制作技艺市级非遗传承人。毕业于四川美术学院雕塑系，17年雕塑从业经验，代表作《诗与远方的归途》。">
+<meta name="keywords" content="赵彦青,雕塑艺术家,工艺美术大师,非遗传承人,穆坪砚,城市雕塑,石雕,四川美术学院,彦青雕塑">
+<meta property="og:title" content="赵彦青 Zhao Yanqing · 雕塑艺术家">
+<meta property="og:description" content="雕塑艺术家 · 非遗传承人 · 四川省工艺美术大师。十七年雕石，以石为媒，以刀为笔。">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://cqyqds.cn/about.html">
+<style>
+  :root{
+    --gold:#B79C5A;
+    --gold-soft:#C9B377;
+    --gold-light:#D4C394;
+    --ink:#1A1A1A;
+    --ink-soft:#3A3A3A;
+    --ink-light:#666;
+    --paper:#FFFFFF;
+    --paper-warm:#FAF8F3;
+    --paper-dark:#F2EFE8;
+    --line:#E4DFD3;
+    --line-light:#F0EBE0;
+    --sans:"Calibri","Helvetica Neue","Arial","Microsoft YaHei",sans-serif;
+    --serif:"STSong","SimSun","宋体","Noto Serif SC",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ===== 渐入动画 ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+               transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ===== 导航 ===== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-light);
+    transition:all 0.3s;
+  }
+  nav .inner{
+    max-width:1200px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 40px;height:64px;
+  }
+  nav .logo{
+    font-family:var(--sans);
+    font-size:12px;letter-spacing:0.36em;color:var(--gold);
+    text-decoration:none;white-space:nowrap;
+  }
+  nav .links{display:flex;gap:32px;list-style:none;}
+  nav .links a{
+    font-family:var(--serif);font-size:14px;color:var(--ink-soft);
+    text-decoration:none;letter-spacing:0.08em;transition:color 0.3s;
+  }
+  nav .links a:hover,nav .links a.active{color:var(--gold);}
+  .menu-toggle{display:none;background:none;border:none;
+    cursor:pointer;padding:8px;color:var(--ink);font-size:22px;}
+
+  /* ===== Hero ===== */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:120px 40px 80px;position:relative;
+  }
+  .hero .brand-mark{
+    font-family:var(--sans);
+    font-size:14px;letter-spacing:0.48em;color:var(--gold);
+    margin-bottom:40px;font-weight:300;
+  }
+  .hero h1{
+    font-family:var(--serif);font-size:52px;font-weight:400;
+    letter-spacing:0.1em;color:var(--ink);margin-bottom:16px;line-height:1.3;
+  }
+  .hero .subtitle{
+    font-family:var(--sans);
+    font-size:16px;letter-spacing:0.24em;color:var(--ink-soft);
+    font-weight:300;text-transform:uppercase;margin-bottom:12px;
+  }
+  .hero .gold-rule{width:60px;height:1px;background:var(--gold);margin:50px auto 0;}
+  .hero .scroll-hint{
+    position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+    font-family:var(--sans);font-size:11px;letter-spacing:0.24em;
+    color:var(--ink-light);animation:fadeInOut 3s ease-in-out infinite;
+  }
+  @keyframes fadeInOut{0%,100%{opacity:0.3;}50%{opacity:1;}}
+
+  /* ===== 章节通用 ===== */
+  section{padding:100px 40px;}
+  .sec-inner{max-width:880px;margin:0 auto;}
+  .sec-label{
+    font-family:var(--sans);font-size:11px;letter-spacing:0.36em;
+    color:var(--gold);text-align:center;margin-bottom:16px;text-transform:uppercase;
+  }
+  .sec-title{
+    font-family:var(--serif);font-size:32px;font-weight:400;
+    letter-spacing:0.08em;color:var(--ink);text-align:center;margin-bottom:10px;
+  }
+  .sec-title-en{
+    font-family:var(--sans);font-size:13px;letter-spacing:0.2em;
+    color:#999;text-align:center;text-transform:uppercase;margin-bottom:56px;
+  }
+
+  /* ===== 简介区 ===== */
+  .intro-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;
+    align-items:start;
+  }
+  .intro-zh,.intro-en{display:flex;flex-direction:column;gap:18px;}
+  .intro-zh p{
+    font-family:var(--serif);font-size:16px;color:var(--ink-soft);
+    line-height:2.2;
+  }
+  .intro-en p{
+    font-family:var(--sans);font-size:15px;color:var(--ink-light);
+    line-height:2;font-style:italic;
+  }
+  .intro-zh .highlight{color:var(--gold);font-family:var(--serif);font-size:20px;line-height:2;margin-top:20px;}
+  .intro-en .highlight{color:var(--gold-soft);font-family:var(--sans);font-size:16px;line-height:2;margin-top:20px;}
+
+  /* ===== 履历区 ===== */
+  .cv-block{margin-bottom:40px;}
+  .cv-block h3{
+    font-family:var(--sans);font-size:12px;letter-spacing:0.36em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:20px;font-weight:400;
+  }
+  .cv-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:4px 40px;
+  }
+  .cv-item{
+    padding:12px 0;border-bottom:1px solid var(--line-light);
+    display:flex;flex-direction:column;
+  }
+  .cv-item .year{
+    font-family:var(--sans);font-size:12px;color:var(--gold);letter-spacing:0.08em;
+  }
+  .cv-item .zh{font-family:var(--serif);font-size:15px;color:var(--ink);}
+  .cv-item .en{font-family:var(--sans);font-size:13px;color:var(--ink-light);font-style:italic;margin-top:2px;}
+
+  /* ===== 作品区 ===== */
+  .works-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .work-card{
+    background:var(--paper);border:1px solid var(--line);
+    transition:all 0.4s cubic-bezier(0.16,1,0.3,1);cursor:default;
+    overflow:hidden;
+  }
+  .work-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+  .work-card .img-placeholder{
+    aspect-ratio:4/3;background:var(--paper-warm);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+  }
+  .work-card .img-placeholder .placeholder-text{
+    font-family:var(--serif);font-size:28px;color:var(--line);
+    letter-spacing:0.1em;
+  }
+  .work-card .img-placeholder .tag{
+    position:absolute;top:12px;left:12px;
+    font-family:var(--sans);font-size:10px;letter-spacing:0.2em;
+    color:var(--gold);background:var(--paper);
+    padding:4px 10px;border:1px solid var(--gold);text-transform:uppercase;
+  }
+  .work-card .info{padding:20px;}
+  .work-card .info h4{
+    font-family:var(--serif);font-size:17px;font-weight:400;color:var(--ink);
+    margin-bottom:4px;
+  }
+  .work-card .info .en{
+    font-family:var(--sans);font-size:13px;color:var(--ink-light);
+    font-style:italic;margin-bottom:10px;
+  }
+  .work-card .info .meta{
+    font-family:var(--sans);font-size:11px;color:#999;
+    letter-spacing:0.08em;
+  }
+
+  /* ===== 荣誉区 ===== */
+  .honors-list{display:flex;flex-direction:column;}
+  .honor-item{
+    display:flex;align-items:baseline;gap:20px;
+    padding:14px 0;border-bottom:1px solid var(--line-light);
+  }
+  .honor-item .year{
+    flex-shrink:0;width:64px;
+    font-family:var(--sans);font-size:12px;color:var(--gold);
+    letter-spacing:0.08em;
+  }
+  .honor-item .body{
+    font-family:var(--serif);font-size:15px;color:var(--ink);
+  }
+  .honor-item .body .en{
+    font-family:var(--sans);font-size:13px;color:var(--ink-light);
+    font-style:italic;margin-top:2px;
+  }
+
+  /* ===== 金句区 ===== */
+  .philosophy{
+    background:var(--ink);color:var(--paper);text-align:center;
+    padding:100px 40px;
+  }
+  .philosophy .quote-zh{
+    font-family:var(--serif);font-size:28px;letter-spacing:0.12em;
+    line-height:2;color:var(--paper);margin-bottom:20px;
+  }
+  .philosophy .quote-en{
+    font-family:var(--sans);font-size:15px;font-style:italic;
+    color:var(--gold-soft);letter-spacing:0.06em;
+  }
+  .philosophy .gold-rule{width:40px;height:1px;background:var(--gold);margin:36px auto 0;}
+
+  /* ===== 页脚 ===== */
+  footer{
+    text-align:center;padding:80px 40px 60px;
+    background:var(--paper-warm);border-top:1px solid var(--line);
+  }
+  footer .cert-mark{
+    font-family:var(--sans);font-size:13px;letter-spacing:0.42em;
+    color:var(--gold);margin-bottom:10px;
+  }
+  footer .cert-no{
+    font-family:var(--sans);font-size:11px;letter-spacing:0.32em;
+    color:var(--ink-light);margin-bottom:36px;
+  }
+  footer .info-block{
+    font-family:var(--serif);font-size:14px;color:var(--ink-soft);
+    line-height:2.2;margin-bottom:8px;
+  }
+  footer .info-block.en{
+    font-family:var(--sans);font-size:13px;color:var(--ink-light);
+  }
+  footer .contact{
+    font-family:var(--sans);font-size:13px;color:var(--ink-light);
+    letter-spacing:0.06em;margin-top:20px;
+  }
+  footer .contact a{color:var(--gold);text-decoration:none;}
+  footer .copyright{
+    font-family:var(--sans);font-size:11px;letter-spacing:0.2em;
+    color:#bbb;margin-top:44px;text-transform:uppercase;
+  }
+
+  /* ===== 回到顶部 ===== */
+  .back-top{
+    position:fixed;bottom:40px;right:40px;z-index:90;
+    width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold);background:var(--paper);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:18px;color:var(--gold);transition:all 0.3s;
+    opacity:0;pointer-events:none;transform:translateY(12px);
+  }
+  .back-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .back-top:hover{background:var(--gold);color:var(--paper);}
+
+  /* ===== 响应式 ===== */
+  @media(max-width:1024px){
+    .works-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:768px){
+    nav .inner{padding:0 24px;}
+    nav .links{display:none;}
+    nav .links.open{
+      display:flex;flex-direction:column;position:absolute;
+      top:64px;left:0;right:0;background:rgba(255,255,255,0.98);
+      backdrop-filter:blur(12px);padding:20px 24px;gap:12px;
+      border-bottom:1px solid var(--line);
+    }
+    .menu-toggle{display:block;}
+    .hero h1{font-size:32px;}
+    .hero .brand-mark{font-size:11px;letter-spacing:0.32em;}
+    section{padding:64px 24px;}
+    .intro-grid{grid-template-columns:1fr;gap:32px;}
+    .cv-grid{grid-template-columns:1fr;}
+    .works-grid{grid-template-columns:1fr;}
+    .philosophy .quote-zh{font-size:22px;}
+    .sec-title{font-size:24px;}
+    .honor-item{gap:12px;}
+  }
+  @media(max-width:480px){
+    .hero{padding:100px 20px 60px;}
+    .hero h1{font-size:26px;}
+    .hero .subtitle{font-size:13px;}
+    section{padding:48px 20px;}
+    footer{padding:60px 20px 48px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav id="nav">
+  <div class="inner">
+    <a href="index.html" class="logo">YANQING SCULPTURE</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">&#9776;</button>
+    <ul class="links" id="navLinks">
+      <li><a href="works.html">作品 Works</a></li>
+      <li><a href="about.html" class="active">关于 About</a></li>
+      <li><a href="contact.html">联系 Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div>
+    <div class="brand-mark reveal">MAISON · YANQING · ATELIER · EST. MMXVI</div>
+    <h1 class="reveal">赵彦青</h1>
+    <div class="subtitle reveal">Zhao Yanqing · Sculptor</div>
+    <p class="reveal" style="font-family:var(--serif);font-size:16px;color:var(--ink-light);margin-top:20px;letter-spacing:0.06em;">
+      雕塑艺术家 · 非遗传承人 · 四川省工艺美术大师
+    </p>
+    <div class="gold-rule reveal"></div>
+  </div>
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- 简介 -->
+<section id="about">
+  <div class="sec-inner">
+    <div class="sec-label reveal">About · 关于</div>
+    <h2 class="sec-title reveal">以石为媒，以刀为笔</h2>
+    <p class="sec-title-en reveal">Stone as medium, chisel as pen</p>
+    <div class="intro-grid">
+      <div class="intro-zh reveal">
+        <p>赵彦青，1987年生于山东，2013年毕业于四川美术学院雕塑系雕塑艺术专业。现为国家一级工艺美术品设计师、四川省工艺美术大师、穆坪砚制作技艺市级非物质文化遗产代表性传承人。</p>
+        <p>十七年雕石，十七年行走。从川美雕塑系的课堂，到雅安宝兴的汉白玉矿脉；从城市广场上的巨型不锈钢锻造，到掌心方寸间的穆坪砚台——他的创作横跨城市公共艺术与工艺美术两个维度。</p>
+        <p>2016年，创立彦青雕塑艺术，总部设于重庆，于雅安宝兴设立工艺美术创作基地。城市雕塑作品分布于重庆、四川、贵州、湖北四地，代表作品《诗与远方的归途》矗立于雅安川藏零公里自驾大本营。</p>
+        <p>他尊重材料原始的脾气，从自然取材。大理石、鹅卵石、陨石、锈铁、船木、工字钢——在他手中，异质的材料彼此对话，剥离外皮，呈现内在的棱角。</p>
+        <p class="highlight">"不像外表那么圆滑，内心依然有棱有角。"</p>
+      </div>
+      <div class="intro-en reveal">
+        <p>Zhao Yanqing (b.1987, Shandong) graduated from the Sculpture Department of the Sichuan Fine Arts Institute in 2013. He is a National First-Class Designer of Arts and Crafts, a Master of Arts and Crafts of Sichuan Province, and a municipal-level bearer of the Intangible Cultural Heritage of Muping Inkstone craftsmanship.</p>
+        <p>Seventeen years carving stone. Seventeen years on the road. From the studios of the Sichuan Fine Arts Institute to the white marble veins of Baoxing, Ya'an; from monumental stainless steel constructions standing in city squares to inkstones held within a single palm — his practice spans the public and the intimate.</p>
+        <p>In 2016, he founded Yanqing Sculpture Art, headquartered in Chongqing, with a studio dedicated to fine craft in Baoxing. His public sculptures stand across Chongqing, Sichuan, Guizhou, and Hubei — among them <em>The Journey Home</em>, marking the Sichuan-Tibet Zero-Kilometer Self-Drive Base Camp in Ya'an.</p>
+        <p>He honors the temper of his materials, drawing from nature. Marble, river stones, meteorites, rusted iron, driftwood, structural steel — disparate elements enter into dialogue under his hand, their surfaces stripped back to reveal the angles within.</p>
+        <p class="highlight">"Not as smooth on the surface as it seems — the heart still holds its edges."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 履历 -->
+<section id="cv" style="background:var(--paper-warm);">
+  <div class="sec-inner">
+    <div class="sec-label reveal">Curriculum Vitae · 履历</div>
+    <h2 class="sec-title reveal">教育与身份</h2>
+    <p class="sec-title-en reveal">Education &amp; Affiliations</p>
+
+    <div class="cv-block reveal">
+      <h3>Education · 教育</h3>
+      <div class="cv-grid">
+        <div class="cv-item">
+          <span class="year">2008–2013</span>
+          <span class="zh">四川美术学院 雕塑系 雕塑艺术专业</span>
+          <span class="en">Sichuan Fine Arts Institute · Sculpture Department</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-block reveal">
+      <h3>Professional Titles · 专业身份</h3>
+      <div class="cv-grid">
+        <div class="cv-item"><span class="zh">国家一级工艺美术品设计师（高级技师）</span><span class="en">National First-Class Designer of Arts and Crafts</span></div>
+        <div class="cv-item"><span class="zh">四川省工艺美术大师</span><span class="en">Master of Arts and Crafts, Sichuan Province</span></div>
+        <div class="cv-item"><span class="zh">穆坪砚制作技艺市级非遗传承人</span><span class="en">ICH Bearer — Muping Inkstone Craftsmanship</span></div>
+        <div class="cv-item"><span class="zh">四川省专家服务团专家</span><span class="en">Expert, Sichuan Provincial Expert Service Corps</span></div>
+        <div class="cv-item"><span class="zh">雅州菁英 · 雅州工匠</span><span class="en">Yazhou Elite · Yazhou Craftsman</span></div>
+        <div class="cv-item"><span class="zh">四川省石雕技能考评员</span><span class="en">Sichuan Stone Carving Skills Assessor</span></div>
+      </div>
+    </div>
+
+    <div class="cv-block reveal">
+      <h3>Academic Affiliations · 学术职务</h3>
+      <div class="cv-grid">
+        <div class="cv-item"><span class="zh">中国轻工联合会雕刻专委会委员</span><span class="en">CNLIC Carving Committee Member</span></div>
+        <div class="cv-item"><span class="zh">中国工艺美术学会会员</span><span class="en">China Arts and Crafts Society</span></div>
+        <div class="cv-item"><span class="zh">四川省工艺美术行业协会常务理事</span><span class="en">Exec. Director, Sichuan Arts and Crafts Assoc.</span></div>
+        <div class="cv-item"><span class="zh">重庆市雕塑学会会员</span><span class="en">Chongqing Sculpture Society</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 作品 -->
+<section id="works">
+  <div class="sec-inner">
+    <div class="sec-label reveal">Selected Works · 代表作品</div>
+    <h2 class="sec-title reveal">从城市地标到掌心砚台</h2>
+    <p class="sec-title-en reveal">From monumental landmarks to palm-sized inkstones</p>
+    <div class="works-grid">
+
+      <div class="work-card reveal">
+        <div class="img-placeholder">
+          <span class="placeholder-text">诗与远方</span>
+          <span class="tag">城市雕塑</span>
+        </div>
+        <div class="info">
+          <h4>诗与远方的归途</h4>
+          <p class="en">The Journey Home</p>
+          <p class="meta">2023 · Stainless Steel · 25m × 15m · 雅安川藏零公里自驾大本营</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="img-placeholder">
+          <span class="placeholder-text">观·心</span>
+          <span class="tag">石雕</span>
+        </div>
+        <div class="info">
+          <h4>观·心</h4>
+          <p class="en">Observation · Heart</p>
+          <p class="meta">2021 · River Stone, Boat Timber, Galv. Steel · 中轻万花杯金奖</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="img-placeholder">
+          <span class="placeholder-text">九螭穿环</span>
+          <span class="tag">石雕</span>
+        </div>
+        <div class="info">
+          <h4>九螭穿环</h4>
+          <p class="en">Nine Dragons Through the Ring</p>
+          <p class="meta">2023 · Stone Carving · 中轻万花杯银奖</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="img-placeholder">
+          <span class="placeholder-text">十二生肖砚</span>
+          <span class="tag">砚台</span>
+        </div>
+        <div class="info">
+          <h4>十二生肖砚</h4>
+          <p class="en">Zodiac Inkstone Series</p>
+          <p class="meta">2025 · 宝兴外朗石 · 穆坪砚</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="img-placeholder">
+          <span class="placeholder-text">窗外</span>
+          <span class="tag">砚台</span>
+        </div>
+        <div class="info">
+          <h4>窗外</h4>
+          <p class="en">Beyond the Window</p>
+          <p class="meta">2025 · 宝兴外朗石 · 穆坪砚</p>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="img-placeholder">
+          <span class="placeholder-text">对话</span>
+          <span class="tag">跨媒介</span>
+        </div>
+        <div class="info">
+          <h4>对话</h4>
+          <p class="en">Dialogue</p>
+          <p class="meta">2021 · Meteorite, River Stone, Camphor Wood, Galv. Pipe</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 荣誉 -->
+<section id="honors" style="background:var(--paper-warm);">
+  <div class="sec-inner">
+    <div class="sec-label reveal">Selected Honors · 荣誉精选</div>
+    <h2 class="sec-title reveal">奖项</h2>
+    <p class="sec-title-en reveal">Awards &amp; Recognition</p>
+    <div class="honors-list">
+      <div class="honor-item reveal">
+        <span class="year">2023</span>
+        <div class="body">中轻万花杯创新产品奖金奖 —《观·心》<span class="en">Gold, China Light Wanhua Cup</span></div>
+      </div>
+      <div class="honor-item reveal">
+        <span class="year">2023</span>
+        <div class="body">中轻万花杯创新产品奖银奖 —《九螭穿环》<span class="en">Silver, China Light Wanhua Cup</span></div>
+      </div>
+      <div class="honor-item reveal">
+        <span class="year">2020</span>
+        <div class="body">天府·宝岛工业设计大赛工艺雕塑类金奖 —《香蕉与蝈蝈》<span class="en">Gold, Sun Bird Cup</span></div>
+      </div>
+      <div class="honor-item reveal">
+        <span class="year">2020</span>
+        <div class="body">金牡丹杯文化创意大赛金奖 —《梦中女神》<span class="en">Gold, Golden Peony Cup</span></div>
+      </div>
+      <div class="honor-item reveal">
+        <span class="year">2020</span>
+        <div class="body">金牡丹杯文化创意大赛金奖 —《生活美学》<span class="en">Gold, Golden Peony Cup</span></div>
+      </div>
+      <div class="honor-item reveal">
+        <span class="year">2020</span>
+        <div class="body">金凤凰创新产品设计大赛银奖 —《紫云石雕组件》<span class="en">Silver, Golden Phoenix</span></div>
+      </div>
+      <div class="honor-item reveal">
+        <span class="year">2012</span>
+        <div class="body">国家奖学金 — 四川美术学院<span class="en">National Scholarship</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 金句 -->
+<section class="philosophy">
+  <div class="reveal">
+    <p class="quote-zh">"不像外表那么圆滑，内心依然有棱有角。"</p>
+    <p class="quote-en">Not as smooth on the surface as it seems — the heart still holds its edges.</p>
+    <div class="gold-rule"></div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="cert-mark">MAISON · YANQING · ATELIER · EST. MMXVI</div>
+  <div class="cert-no">N° — MMXVI</div>
+  <p class="info-block">
+    赵彦青 · 雕塑艺术家 · 四川省工艺美术大师 · 穆坪砚非遗传承人
+  </p>
+  <p class="info-block en">
+    Zhao Yanqing · Sculptor · Master of Arts and Crafts · Heritage Bearer
+  </p>
+  <p class="info-block" style="margin-top:12px;">
+    重庆彦青雕塑艺术有限公司 · 宝兴彦青雕塑艺术有限公司
+  </p>
+  <p class="info-block en">
+    Chongqing Yanqing Sculpture Art Co., Ltd. · Baoxing Yanqing Sculpture Art Co., Ltd.
+  </p>
+  <div class="contact">
+    <span>Tel · <a href="tel:13452355322">13452355322</a></span>
+    <span style="margin:0 16px;">|</span>
+    <span>Email · <a href="mailto:1553955932@qq.com">1553955932@qq.com</a></span>
+    <span style="margin:0 16px;">|</span>
+    <span>Web · <a href="https://cqyqds.cn">cqyqds.cn</a></span>
+  </div>
+  <div class="copyright">&copy; MMXVI–MMXXVI &nbsp;Yanqing Sculpture Art. All Rights Reserved.</div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+<script>
+// 渐入动画
+(function(){
+  const observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');}
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});
+})();
+
+// 导航阴影
+window.addEventListener('scroll',function(){
+  var nav=document.getElementById('nav');
+  nav.style.boxShadow=window.scrollY>10?'0 1px 12px rgba(0,0,0,0.04)':'none';
+},800);
+
+// 回到顶部按钮
+window.addEventListener('scroll',function(){
+  var btn=document.getElementById('backTop');
+  if(window.scrollY>600){btn.classList.add('show');}else{btn.classList.remove('show');}
+});
+
+// 移动端菜单
+document.getElementById('menuToggle').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
