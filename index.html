@@ -2189,24 +2189,24 @@
     <div class="chat-panel" id="chatPanel">
         <div class="chat-header">
             <div class="chat-header-title">彦青雕塑 · AI 顾问</div>
-            <div class="chat-header-subtitle">Artistic Advisor</div>
+            <div class="chat-header-subtitle">AI Artistic Advisor · 艺术顾问</div>
         </div>
         <div class="chat-messages" id="chatMessages">
             <div class="chat-msg bot">
                 <div class="chat-bubble">
-                    您好！我是彦青雕塑的AI艺术顾问 ✨<br><br>可以帮您了解：<br>· 城市雕塑项目合作<br>· 砚台与石雕定制<br>· 作品咨询与报价流程<br><br>试试直接问我：<br>· "川藏零公里项目"<br>· "观心是什么材料做的"<br>· "怎么定制砚台"
+                    您好！我是彦青雕塑的AI艺术顾问 ✨<br>Hello! I'm the AI Artistic Advisor for Yanqing Sculpture.<br><br>可以帮您了解 / I can help with：<br>· 城市雕塑项目合作 · Urban sculpture collaboration<br>· 砚台与石雕定制 · Inkstone & stone customization<br>· 作品咨询与报价流程 · Artwork & pricing consultation<br><br>试试直接问我 / Try asking：<br>· "川藏零公里项目"<br>· "观心是什么材料做的"<br>· "怎么定制砚台"
                 </div>
             </div>
         </div>
         <div class="chat-suggestions" id="chatSuggestions">
-            <button class="chat-suggestion" onclick="sendPreset('城市雕塑项目怎么合作？')">城市雕塑合作</button>
-            <button class="chat-suggestion" onclick="sendPreset('砚台可以定制吗？')">砚台定制</button>
-            <button class="chat-suggestion" onclick="sendPreset('你们做过哪些大项目？')">项目案例</button>
-            <button class="chat-suggestion" onclick="sendPreset('报价和流程是怎样的？')">报价流程</button>
+            <button class="chat-suggestion" onclick="sendPreset('城市雕塑项目怎么合作？')">城市雕塑合作 · Sculpture</button>
+            <button class="chat-suggestion" onclick="sendPreset('砚台可以定制吗？')">砚台定制 · Inkstone</button>
+            <button class="chat-suggestion" onclick="sendPreset('你们做过哪些大项目？')">项目案例 · Projects</button>
+            <button class="chat-suggestion" onclick="sendPreset('报价和流程是怎样的？')">报价流程 · Pricing</button>
         </div>
         <div class="chat-input-area">
-            <input type="text" id="chatInput" placeholder="输入您的问题…" onkeydown="if(event.key==='Enter')sendMessage()">
-            <button onclick="sendMessage()">发送</button>
+            <input type="text" id="chatInput" placeholder="输入您的问题… Ask away…" onkeydown="if(event.key==='Enter')sendMessage()">
+            <button onclick="sendMessage()">发送 · Send</button>
         </div>
     </div>
     <button class="chat-toggle" onclick="toggleChat()" aria-label="打开在线对话" aria-expanded="false" id="chatToggleBtn">
@@ -2514,9 +2514,9 @@ MAISON · YANQING · ATELIER · Est. 2016
 
     // ===== CHAT GREETING =====
     const greetingVariants = [
-        '您好！我是彦青雕塑的AI艺术顾问 ✨\n\n可以帮您了解：城市雕塑合作、砚台定制、作品咨询、报价流程等。\n\n也可以直接问我具体问题，比如：\n· "川藏零公里项目"\n· "观心是什么材料做的"\n· "怎么定制砚台"',
-        '欢迎来到彦青雕塑！🗿\n\n我是品牌AI顾问，熟悉赵彦青先生的全部作品、项目经历和合作流程。\n\n有什么可以帮您的？',
-        'Hi! I\'m the Yanqing Sculpture art advisor. ✨\n\nFeel free to ask about urban sculpture projects, inkstone customization, Zhao Yanqing\'s artworks, pricing, or credentials.\n\nHow can I help you today?'
+        '您好！我是彦青雕塑的AI艺术顾问 ✨\nHello! I\'m the AI Artistic Advisor for Yanqing Sculpture.\n\n可以帮您了解：城市雕塑合作、砚台定制、作品咨询、报价流程等。\nI can help with: urban sculpture collaboration, inkstone customization, artwork & pricing consultation.\n\n也可以直接问我具体问题，比如：\nOr try asking directly:\n· "川藏零公里项目"\n· "观心是什么材料做的"\n· "怎么定制砚台"',
+        '欢迎来到彦青雕塑！🗿\nWelcome to Yanqing Sculpture!\n\n我是品牌AI顾问，熟悉赵彦青先生的全部作品、项目经历和合作流程。\nI\'m the brand AI advisor, familiar with all of Zhao Yanqing\'s artworks, project experience, and collaboration process.\n\n有什么可以帮您的？How can I help?',
+        '您好！我是彦青雕塑的AI艺术顾问 ✨\nHello! I\'m the AI Artistic Advisor for Yanqing Sculpture.\n\n可以帮您了解：城市雕塑合作、砚台定制、作品咨询、报价流程等。\nFeel free to ask about urban sculpture projects, inkstone customization, artworks, pricing, or credentials.\n\n试试直接问我：\n· "川藏零公里项目"\n· "观心是什么材料做的"\n· "怎么定制砚台"\n\nHow can I help you today?'
     ];
 
     function getBotReply(msg) {
@@ -2550,7 +2550,7 @@ MAISON · YANQING · ATELIER · Est. 2016
         ];
         const random = suggestions[Math.floor(Math.random() * suggestions.length)];
 
-        return `感谢您的咨询。关于"${msg.substring(0, 20)}${msg.length > 20 ? '…' : ''}"，我建议您直接致电赵老师获取最准确的答复：<strong>134-5235-5322</strong><br><br>或者试试问我这些问题：<br>· 城市雕塑项目怎么合作？<br>· 砚台可以定制吗？<br>· 你们做过哪些大项目？`;
+        return `感谢您的咨询。Thank you for your inquiry.<br><br>关于"${msg.substring(0, 20)}${msg.length > 20 ? '…' : ''}"，建议您直接致电赵老师获取最准确的答复 / For the most accurate answer, please contact Mr. Zhao directly：<strong>134-5235-5322</strong><br><br>或者试试问我这些问题 / Or try asking：<br>· 城市雕塑项目怎么合作？<br>· 砚台可以定制吗？<br>· 你们做过哪些大项目？`;
     }
 
     // ===== UPDATE GREETING ON OPEN =====
