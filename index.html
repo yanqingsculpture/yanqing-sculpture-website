@@ -49,6 +49,17 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="preload" as="image" href="images/guanxin.webp?v=2">
     <link rel="preload" as="image" href="images/work-photo.webp">
+    <!-- 微信缓存刷新：首次加载时强制刷新一次，避免旧 CSS/图片缓存 -->
+    <script>
+        (function() {
+            if (/MicroMessenger/i.test(navigator.userAgent) && !sessionStorage.getItem('cqyqds_wx_refresh')) {
+                sessionStorage.setItem('cqyqds_wx_refresh', '1');
+                if (!/wxrefresh=/.test(window.location.search)) {
+                    window.location.replace(window.location.pathname + '?wxrefresh=' + Date.now());
+                }
+            }
+        })();
+    </script>
     <meta name="theme-color" content="#f8f5f0">
     <meta name="author" content="赵彦青">
     <meta name="robots" content="index, follow">
@@ -102,7 +113,7 @@
             .hero, .section, .nav-links.mobile-open, .chat-panel, .chat-header, .chat-messages, .chat-input-area, .about-text, .portfolio-item {
                 background: #f8f5f0 !important;
             }
-            .hero-title, .hero-subtitle, .section-title, .about-text h2, .about-text p, .timeline-title, .timeline-desc, .honor-card-award, .honor-card-detail, .portfolio-filter, .portfolio-overlay-title {
+            .hero-title, .hero-subtitle, .hero-overline, .hero-scroll span, .section-title, .about-text h2, .about-text p, .timeline-title, .timeline-desc, .honor-card-award, .honor-card-detail, .portfolio-filter, .portfolio-overlay-title {
                 color: #0a0a0a !important;
             }
             nav { background: rgba(248, 245, 240, 0.98) !important; }
@@ -217,66 +228,64 @@
         /* ========== HERO ========== */
         .hero {
             position: relative;
-            height: 100vh;
-            min-height: 600px;
+            min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             background: #f8f5f0;
-            background-image: linear-gradient(180deg, #f8f5f0 0%, #f0ece3 100%);
-            overflow: hidden;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
+            padding: 7rem 1.5rem 6rem;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
+            width: 100%;
+            max-width: 900px;
             padding: 2rem;
         }
 
         .hero-overline {
             font-family: var(--serif-en);
             font-size: 0.75rem;
-            letter-spacing: 0.5em;
-            color: var(--gray);
+            letter-spacing: 0.35em;
+            color: #666666;
             margin-bottom: 2rem;
             text-transform: uppercase;
         }
 
         .hero-title {
             font-family: var(--serif-cn);
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: clamp(2.4rem, 10vw, 4rem);
             font-weight: 600;
             letter-spacing: 0.1em;
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: 1rem;
+            color: #0a0a0a;
         }
 
         .hero-title .gold {
-            color: var(--gold);
+            color: #B79C5A;
         }
 
         .hero-subtitle {
             font-family: var(--serif-en);
-            font-size: clamp(1rem, 2vw, 1.4rem);
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            color: var(--gray);
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            font-weight: 400;
+            letter-spacing: 0.25em;
+            color: #555555;
             font-style: italic;
         }
 
         .hero-line {
             width: 1px;
-            height: 80px;
-            background: linear-gradient(to bottom, var(--gold), transparent);
-            margin: 2rem auto;
+            height: 60px;
+            background: linear-gradient(to bottom, #B79C5A, transparent);
+            margin: 1.8rem auto;
         }
 
         .hero-scroll {
             position: absolute;
-            bottom: 3rem;
+            bottom: 2.5rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -289,15 +298,14 @@
             font-family: var(--serif-en);
             font-size: 0.65rem;
             letter-spacing: 0.3em;
-            color: var(--gray);
+            color: #777777;
             text-transform: uppercase;
         }
 
         .hero-scroll-arrow {
             width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, var(--gray), transparent);
-            animation: scrollArrow 1.5s ease-in-out infinite;
+            height: 36px;
+            background: linear-gradient(to bottom, #999999, transparent);
         }
 
         @keyframes scrollArrow {
@@ -1229,17 +1237,18 @@
 
         @media (max-width: 768px) {
             .hero {
-                height: auto;
                 min-height: 100vh;
                 min-height: 100dvh;
                 padding: 8rem 1.5rem 7rem;
-                background: #f8f5f0;
-                background-image: linear-gradient(180deg, #f8f5f0 0%, #f0ece3 100%);
+                background: #ffffff;
             }
-            .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
-            .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.2em; }
-            .hero-line { height: 50px; }
+            .hero-content { padding: 1.5rem; }
+            .hero-title { font-size: 2.6rem; color: #000000; }
+            .hero-subtitle { font-size: 0.9rem; letter-spacing: 0.15em; color: #555555; }
+            .hero-overline { font-size: 0.65rem; letter-spacing: 0.25em; color: #777777; }
+            .hero-line { height: 48px; margin: 1.5rem auto; }
             .hero-scroll { bottom: 5.5rem; }
+            .hero-scroll span { color: #888888; }
             .section { padding: 5rem 1.5rem; }
             .portfolio-grid { grid-template-columns: 1fr; }
             .chat-panel { width: calc(100vw - 3rem); right: -0.5rem; }
