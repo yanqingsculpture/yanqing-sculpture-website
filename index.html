@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <title>Yanqing Sculpture | 彦青雕塑 — 城市雕塑 · 石雕 · 砚台 · 工艺美术</title>
     <meta name="description" content="彦青雕塑艺术 — 国家一级工艺美术品设计师赵彦青创立。专注城市景观雕塑、汉白玉石雕、穆坪砚台的设计制作。重庆&宝兴双工作室。Yanqing Sculpture · Est. 2016">
     <meta name="keywords" content="城市雕塑,景观雕塑,石雕,汉白玉,砚台,穆坪砚,工艺美术大师,赵彦青,四川美术学院,宝兴,重庆雕塑公司">
     <!-- Open Graph / Social Share -->
     <meta property="og:title" content="Yanqing Sculpture | 彦青雕塑">
     <meta property="og:description" content="国家一级工艺美术品设计师赵彦青创立。城市雕塑·石雕·砚台。Est. 2016">
-    <meta property="og:image" content="https://cqyqds.cn/images/guanxin.webp">
+    <meta property="og:image" content="https://cqyqds.cn/images/guanxin.webp?v=2">
     <meta property="og:url" content="https://cqyqds.cn">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Yanqing Sculpture | 彦青雕塑">
     <meta name="twitter:description" content="国家一级工艺美术品设计师赵彦青创立。城市雕塑·石雕·砚台。">
-    <meta name="twitter:image" content="https://cqyqds.cn/images/guanxin.webp">
+    <meta name="twitter:image" content="https://cqyqds.cn/images/guanxin.webp?v=2">
     <link rel="canonical" href="https://cqyqds.cn">
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -26,7 +28,7 @@
         "alternateName": "Yanqing Sculpture",
         "url": "https://cqyqds.cn",
         "logo": "https://cqyqds.cn/logo.png",
-        "image": "https://cqyqds.cn/images/guanxin.webp",
+        "image": "https://cqyqds.cn/images/guanxin.webp?v=2",
         "description": "国家一级工艺美术品设计师赵彦青创立，专注城市景观雕塑、汉白玉石雕、穆坪砚台的设计制作",
         "founder": {
             "@type": "Person",
@@ -45,7 +47,7 @@
     </script>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
-    <link rel="preload" as="image" href="images/guanxin.webp">
+    <link rel="preload" as="image" href="images/guanxin.webp?v=2">
     <link rel="preload" as="image" href="images/work-photo.webp">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="author" content="赵彦青">
@@ -198,33 +200,29 @@
         /* ========== HERO ========== */
         .hero {
             position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('images/guanxin.webp') center/cover no-repeat;
-            opacity: 0.22;
-            pointer-events: none;
-        }
-        .hero-overlay {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(248,245,240,0.55) 0%, rgba(248,245,240,0.75) 60%, rgba(248,245,240,0.95) 100%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .hero {
             height: 100vh;
             min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
             background: linear-gradient(180deg, #f8f5f0 0%, #efe8da 100%);
             overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/guanxin.webp?v=2') center/cover no-repeat;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(248,245,240,0.78) 0%, rgba(248,245,240,0.88) 60%, rgba(248,245,240,0.98) 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .hero::after {
@@ -1247,7 +1245,10 @@
                 min-height: 100vh;
                 min-height: 100dvh;
                 padding: 8rem 1.5rem 7rem;
+                background: var(--white);
             }
+            .hero::before { opacity: 0.08; }
+            .hero-overlay { background: rgba(248,245,240,0.96); }
             .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
             .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.2em; }
             .hero-line { height: 50px; }
@@ -1667,7 +1668,7 @@
             <div class="timeline-desc">丙烯、油画等，高2.2米 — 2024.9</div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-img"><img src="images/timeline-baoxing.webp" loading="lazy" alt="宝兴新寨游客接待中心彩绘装饰"></div>
+            <div class="timeline-img"><img src="images/timeline-baoxing.webp?v=2" loading="lazy" alt="宝兴新寨游客接待中心彩绘装饰"></div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-title">重庆九龙坡冶金村800米长廊旧改提质</div>
