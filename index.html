@@ -49,7 +49,7 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="preload" as="image" href="images/guanxin.webp?v=2">
     <link rel="preload" as="image" href="images/work-photo.webp">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#f8f5f0">
     <meta name="author" content="赵彦青">
     <meta name="robots" content="index, follow">
     <!-- VisualArtwork Structured Data -->
@@ -86,11 +86,28 @@
 
         body {
             font-family: var(--serif-cn);
-            background: var(--white);
-            color: var(--black);
+            background: #f8f5f0;
+            color: #0a0a0a;
             line-height: 1.8;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* 强制浅色模式：覆盖系统/浏览器深色模式 */
+        @media (prefers-color-scheme: dark) {
+            html, body {
+                background: #f8f5f0 !important;
+                color: #0a0a0a !important;
+            }
+            .hero, .section, .nav-links.mobile-open, .chat-panel, .chat-header, .chat-messages, .chat-input-area, .about-text, .portfolio-item {
+                background: #f8f5f0 !important;
+            }
+            .hero-title, .hero-subtitle, .section-title, .about-text h2, .about-text p, .timeline-title, .timeline-desc, .honor-card-award, .honor-card-detail, .portfolio-filter, .portfolio-overlay-title {
+                color: #0a0a0a !important;
+            }
+            nav { background: rgba(248, 245, 240, 0.98) !important; }
+            .mobile-nav { background: rgba(248, 245, 240, 0.98) !important; border-top-color: rgba(183,156,90,0.2); }
+            .mobile-nav-item { color: #2a2a2a !important; }
         }
 
         /* ========== NAVIGATION ========== */
@@ -206,45 +223,16 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(180deg, #f8f5f0 0%, #efe8da 100%);
+            background: #f8f5f0;
+            background-image: linear-gradient(180deg, #f8f5f0 0%, #f0ece3 100%);
             overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('images/guanxin.webp?v=2') center/cover no-repeat;
-            opacity: 0.18;
-            pointer-events: none;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(248,245,240,0.78) 0%, rgba(248,245,240,0.88) 60%, rgba(248,245,240,0.98) 100%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, rgba(183,156,90,0.03) 0%, transparent 70%);
-            animation: heroPulse 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes heroPulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.05); opacity: 1; }
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             padding: 2rem;
         }
 
@@ -1245,10 +1233,9 @@
                 min-height: 100vh;
                 min-height: 100dvh;
                 padding: 8rem 1.5rem 7rem;
-                background: var(--white);
+                background: #f8f5f0;
+                background-image: linear-gradient(180deg, #f8f5f0 0%, #f0ece3 100%);
             }
-            .hero::before { opacity: 0.08; }
-            .hero-overlay { background: rgba(248,245,240,0.96); }
             .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
             .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.2em; }
             .hero-line { height: 50px; }
@@ -1265,7 +1252,7 @@
                 top: 72px;
                 left: 0;
                 right: 0;
-                background: var(--white);
+                background: #f8f5f0;
                 padding: 2rem;
                 border-bottom: 1px solid rgba(0,0,0,0.06);
                 gap: 1.5rem;
@@ -1278,9 +1265,14 @@
 
         /* ========== ANIMATIONS ========== */
         .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .js-enabled .fade-in {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .fade-in.visible {
@@ -1414,7 +1406,6 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-    <div class="hero-overlay"></div>
     <div class="hero-content">
         <div class="hero-overline">Maison · Yanqing · Atelier · Est. MMXVI</div>
         <h1 class="hero-title">
@@ -1668,7 +1659,7 @@
             <div class="timeline-desc">丙烯、油画等，高2.2米 — 2024.9</div>
         </div>
         <div class="timeline-item fade-in">
-            <div class="timeline-img"><img src="images/timeline-baoxing.webp?v=2" loading="lazy" alt="宝兴新寨游客接待中心彩绘装饰"></div>
+            <div class="timeline-img"><img src="images/timeline-baoxing-2024.webp" loading="lazy" alt="宝兴新寨游客接待中心彩绘装饰"></div>
         </div>
         <div class="timeline-item fade-in">
             <div class="timeline-title">重庆九龙坡冶金村800米长廊旧改提质</div>
@@ -2213,6 +2204,9 @@
 </div>
 
 <script>
+    // 标记 JS 已启用，启用 fade-in 动画；若 JS 未加载，内容默认可见
+    document.documentElement.classList.add('js-enabled');
+
     // ===== MOBILE MENU =====
     function toggleMenu() {
         document.getElementById('navLinks').classList.toggle('mobile-open');
