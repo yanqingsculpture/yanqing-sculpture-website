@@ -9,13 +9,13 @@
     <!-- Open Graph / Social Share -->
     <meta property="og:title" content="Yanqing Sculpture | 彦青雕塑">
     <meta property="og:description" content="国家一级工艺美术品设计师赵彦青创立。城市雕塑·石雕·砚台。Est. 2016">
-    <meta property="og:image" content="https://cqyqds.cn/images/hero-bg.webp">
+    <meta property="og:image" content="https://cqyqds.cn/images/guanxin.webp">
     <meta property="og:url" content="https://cqyqds.cn">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Yanqing Sculpture | 彦青雕塑">
     <meta name="twitter:description" content="国家一级工艺美术品设计师赵彦青创立。城市雕塑·石雕·砚台。">
-    <meta name="twitter:image" content="https://cqyqds.cn/images/hero-bg.webp">
+    <meta name="twitter:image" content="https://cqyqds.cn/images/guanxin.webp">
     <link rel="canonical" href="https://cqyqds.cn">
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -26,7 +26,7 @@
         "alternateName": "Yanqing Sculpture",
         "url": "https://cqyqds.cn",
         "logo": "https://cqyqds.cn/logo.png",
-        "image": "https://cqyqds.cn/images/hero-bg.webp",
+        "image": "https://cqyqds.cn/images/guanxin.webp",
         "description": "国家一级工艺美术品设计师赵彦青创立，专注城市景观雕塑、汉白玉石雕、穆坪砚台的设计制作",
         "founder": {
             "@type": "Person",
@@ -45,7 +45,7 @@
     </script>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
-    <link rel="preload" as="image" href="images/hero-bg.webp">
+    <link rel="preload" as="image" href="images/guanxin.webp">
     <link rel="preload" as="image" href="images/work-photo.webp">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="author" content="赵彦青">
@@ -203,9 +203,17 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: url('images/hero-bg.webp') center/cover no-repeat;
-            opacity: 0.25;
+            background: url('images/guanxin.webp') center/cover no-repeat;
+            opacity: 0.22;
             pointer-events: none;
+        }
+        .hero-overlay {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(248,245,240,0.55) 0%, rgba(248,245,240,0.75) 60%, rgba(248,245,240,0.95) 100%);
+            pointer-events: none;
+            z-index: 0;
         }
         .hero {
             height: 100vh;
@@ -1234,6 +1242,16 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                min-height: 100dvh;
+                padding: 8rem 1.5rem 7rem;
+            }
+            .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
+            .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.2em; }
+            .hero-line { height: 50px; }
+            .hero-scroll { bottom: 5.5rem; }
             .section { padding: 5rem 1.5rem; }
             .portfolio-grid { grid-template-columns: 1fr; }
             .chat-panel { width: calc(100vw - 3rem); right: -0.5rem; }
@@ -1395,6 +1413,7 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
         <div class="hero-overline">Maison · Yanqing · Atelier · Est. MMXVI</div>
         <h1 class="hero-title">
@@ -1555,7 +1574,7 @@
             </div>
         </div>
         <div class="portfolio-item" data-category="sculpture">
-            <a href="works/baoxing-shanshui.html" class="portfolio-item-inner"><img src="images/guanxin.webp" loading="lazy" alt="宝兴的山与水" style="object-position: center 30%;"></a>
+            <a href="works/baoxing-shanshui.html" class="portfolio-item-inner"><img src="images/baoxing-shanshui.webp" loading="lazy" alt="宝兴的山与水"></a>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2022-001</div>
                 <div class="portfolio-overlay-title">宝兴的山与水</div>
@@ -1563,7 +1582,7 @@
             </div>
         </div>
         <div class="portfolio-item" data-category="sculpture">
-            <a href="works/shanjian.html" class="portfolio-item-inner"><img src="images/shishi-eryu.webp" loading="lazy" alt="山涧" style="object-position: center 70%;"></a>
+            <a href="works/shanjian.html" class="portfolio-item-inner"><img src="images/shanjian.webp" loading="lazy" alt="山涧"></a>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°SC-2021-003</div>
                 <div class="portfolio-overlay-title">山涧</div>
@@ -1597,7 +1616,7 @@
             </div>
         </div>
         <div class="portfolio-item" data-category="inkstone">
-            <a href="works/bajiaoyan.html" class="portfolio-item-inner"><img src="images/chuangwai-1.webp" loading="lazy" alt="芭蕉砚系列"></a>
+            <a href="works/bajiaoyan.html" class="portfolio-item-inner"><img src="images/bajiaoyan.webp" loading="lazy" alt="芭蕉砚系列"></a>
             <div class="portfolio-overlay">
                 <div class="portfolio-overlay-num">N°IN-2025-004</div>
                 <div class="portfolio-overlay-title">芭蕉砚系列</div>
